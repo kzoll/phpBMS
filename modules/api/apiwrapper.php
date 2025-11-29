@@ -51,7 +51,11 @@ class apiwrapper{
      * @param string $username The username of an user with portal access
      * @param string $password The password of the same user with portal access
      * @param bool $secure Whether or not to transfer data over ssl.
-     * @param integer $port If there is a non-standard port (i.e. different than 80 if not using an ssl connection, and different than 443 if using an ssl connection).
+     * @param integer $port If there is a non-standard port (i.e. different than
+##### v80
+if not using an ssl connection, and different than
+##### v443
+if using an ssl connection).
      */
 
     public function __construct($hostname, $urlPath, $username, $password, $secure = false, $port = NULL) {
@@ -61,7 +65,9 @@ class apiwrapper{
         $this->username = $username;
         $this->password = $password;
         $this->secure = (bool) $secure;
-        if($port === 0 || (int)$port > 0)
+        if($port ===
+##### v0
+|| (int)$port > 0)
             $this->port = $port;
 
     }//end function
@@ -588,7 +594,9 @@ class apiwrapper{
         $oldUrl = $this->apiUrl;
 
         $this->apiHostname = $urlInfo["host"];
-        if($port === 0 || (int)$port > 0)
+        if($port ===
+##### v0
+|| (int)$port > 0)
             $this->port = $urlInfo["port"];
         else
             $this->port = NULL;

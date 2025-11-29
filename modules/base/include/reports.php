@@ -3,7 +3,9 @@
  $Rev$ | $LastChangedBy$
  $LastChangedDate$
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -341,7 +343,9 @@ if(class_exists("phpbmsTable")) {
                 </tr>
                 <?php
 
-                $row = ($row==1) ? 2 : 1;
+                $row = ($row==1) ?
+##### v2
+: 1;
 
             }//endwhile
 

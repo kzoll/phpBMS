@@ -9,13 +9,19 @@ h2{
 	background: #0B63A2 url("../../image/statusmessage.png") no-repeat 7px 6px;
 	color: white;
 	padding: 4px 10px 10px;
-	margin:0 0 8px;
+	margin:0
+##### v0
+8px;
 }
 
 	#systemMessageContainer h2{
 		color: white;
-		margin: 0 0 5px 20px;
-                padding: 0 0 4px;
+		margin:
+##### v0
+0 5px 20px;
+                padding:
+##### v0
+0 4px;
 		font-size: 15px;
 	}
 
@@ -47,7 +53,9 @@ h2{
 .systemMessageLinks span{
 	color:#666666;
 	font-size:11px;
-	padding:0 0 0 4px;
+	padding:0
+##### v0
+0 4px;
 }
 
 .systemMessages p{
@@ -67,11 +75,15 @@ h2{
     }
 
     #bigArea .widgets{
-        margin: 0 10px 10px 0;
+        margin:
+##### v0
+10px 10px 0;
     }
 
         #bigArea.littleLeft .widgets{
-            margin: 0 0 10px 10px;
+            margin:
+##### v0
+0 10px 10px;
         }
 
 #littleArea{
@@ -84,11 +96,15 @@ h2{
     }
 
     #littleArea .widgets{
-        margin: 0 0 10px 10px;
+        margin:
+##### v0
+0 10px 10px;
     }
 
         #littleArea.littleLeft .widgets{
-            margin: 0 10px 10px 0;
+            margin:
+##### v0
+10px 10px 0;
         }
 
 #widgetContainer{
@@ -155,6 +171,8 @@ h2{
 
 .widgetOptions{
     float:right;
-    padding: 6px 6px 0 0;
+    padding: 6px 6px
+##### v0
+0;
     display:none;
 }

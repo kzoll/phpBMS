@@ -3,7 +3,9 @@
  $Rev$ | $LastChangedBy$
  $LastChangedDate$
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -46,7 +48,9 @@
 
 	$querystatement = "
         SELECT
-            IF(`discounts`.`type` + 0 = 1,concat(`discounts`.`value`,'%'),`discounts`.`value`) AS `value`
+            IF(`discounts`.`type` +
+##### v0
+= 1,concat(`discounts`.`value`,'%'),`discounts`.`value`) AS `value`
         FROM
             `discounts`
         WHERE

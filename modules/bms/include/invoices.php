@@ -1,9 +1,15 @@
 <?php
 /*
- $Rev: 254 $ | $LastChangedBy: brieb $
- $LastChangedDate: 2007-08-07 18:38:38 -0600 (Tue, 07 Aug 2007) $
+ $Rev:
+##### v254
+$ | $LastChangedBy: brieb $
+ $LastChangedDate: 2007-08-07 18:38:38 -0600 (Tue,
+##### v07
+Aug 2007) $
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -845,22 +851,30 @@ if(class_exists("phpbmsTable")){
 				//readytopost
 				if(isset($variables["readytopost"]))
 					if($variables["readytopost"] && $variables["readytopost"] != 1)
-						$this->verifyErrors[] = "The `readytopost` field must be a boolean (equivalent to 0 or exactly 1).";
+						$this->verifyErrors[] = "The `readytopost` field must be a boolean (equivalent to
+##### v0
+or exactly 1).";
 
 				//weborder
 				if(isset($variables["weborder"]))
 					if($variables["weborder"] && $variables["weborder"] != 1)
-						$this->verifyErrors[] = "The `weborder` field must be a boolean (equivalent to 0 or exactly 1).";
+						$this->verifyErrors[] = "The `weborder` field must be a boolean (equivalent to
+##### v0
+or exactly 1).";
 
 				//shiptosameasbilling
 				if(isset($variables["shiptosameasbilling"]))
 					if($variables["shiptosameasbilling"] && $variables["shiptosameasbilling"] != 1)
-						$this->verifyErrors[] = "The `shiptosameasbilling` field must be a boolean (equivalent to 0 or exactly 1).";
+						$this->verifyErrors[] = "The `shiptosameasbilling` field must be a boolean (equivalent to
+##### v0
+or exactly 1).";
 
 				//iscreditmemo
 				if(isset($variables["iscreditmemo"]))
 					if($variables["iscreditmemo"] && $variables["iscreditmemo"] != 1)
-						$this->verifyErrors[] = "The `iscreditmemo` field must be a boolean (equivalent to 0 or exactly 1).";
+						$this->verifyErrors[] = "The `iscreditmemo` field must be a boolean (equivalent to
+##### v0
+or exactly 1).";
 			//check addresss ids
 			//check secondary line item ids
 

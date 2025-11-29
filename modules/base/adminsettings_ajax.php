@@ -23,7 +23,9 @@ class checkUpdate {
 
             $querystatement = "
                 SELECT
-                    IF((NOW() >= date_add(`value`, INTERVAL 1 DAY)) OR `value` = '' OR `value` IS NULL,1,0) AS `doautocheck`
+                    IF((NOW() >= date_add(`value`, INTERVAL
+##### v1
+DAY)) OR `value` = '' OR `value` IS NULL,1,0) AS `doautocheck`
                 FROM
                     `settings`
                 WHERE

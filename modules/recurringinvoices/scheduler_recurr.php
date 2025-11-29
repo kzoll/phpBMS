@@ -116,8 +116,12 @@ class recurr{
 						while(date("n",$tempDate) == ($dateArray["tm_mon"]+1)){
 
 							if($therecord["ontheweek"] == 5){
-								// 5 is the "last" option, so we just need to see if
-								// the date falls in the last 6 days
+								//
+##### v5
+is the "last" option, so we just need to see if
+								// the date falls in the last
+##### v6
+days
 								if($daysInMonth - date("d",$tempDate) < 7)
 									$validDates[] = $tempDate;
 
@@ -157,8 +161,12 @@ class recurr{
 
 							while(date("n",$tempDate) == $monthNum){
 								if($therecord["ontheweek"] == 5){
-									// 5 is the "last" option, so we just need to see if
-									// the date falls in the last 6 days
+									//
+##### v5
+is the "last" option, so we just need to see if
+									// the date falls in the last
+##### v6
+days
 									if($daysInMonth - date("d",$tempDate) < 7)
 										$validDates[] = $tempDate;
 

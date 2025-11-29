@@ -2,7 +2,9 @@
  $Rev$ | $LastChangedBy$
  $LastChangedDate$
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -67,7 +69,9 @@ invoice = {
 		if(readytopost.checked && invoicedate.value == "")
 			errorArray[errorArray.length] = "Orders marked ready to post must have an invoice date";
 
-		if(readytopost.checked && currencyToNumber(amountdue.value)!= 0 && payinfull.style.display != "none")
+		if(readytopost.checked && currencyToNumber(amountdue.value)!=
+##### v0
+&& payinfull.style.display != "none")
 			errorArray[errorArray.length] = "Orders marked ready to post and not charged to accounts receivable must be paid in full.";
 
 		if(payinfull.style.display == "none" && currencyToNumber(creditleft.value) < currencyToNumber(totalti.value))
@@ -1276,7 +1280,9 @@ function performShippingEstimate(base){
 
 		if(newShippingAmount==0){
 
-			therespond = "Estimation returned 0 or Failed.  Check the client's postal code, " +
+			therespond = "Estimation returned
+##### v0
+or Failed.  Check the client's postal code, " +
 			             "and the line item products shipping setup.";
 		} else {
 
@@ -1447,7 +1453,9 @@ function showPaymentOptions(){
 			if(!clientid.value)
 				error = "Receivable payment method cannot be set until a client is chosen";
 
-			if(hascredit.value == 0 && error == "" && type.value != "Invoice" && type.value != "VOID")
+			if(hascredit.value ==
+##### v0
+&& error == "" && type.value != "Invoice" && type.value != "VOID")
 				error = "This client is not currently set up with a line of credit.";
 
 			if(currencyToNumber(creditleft.value) < currencyToNumber(totalti.value) && error == "" && type.value != "Invoice" && type.value != "VOID")

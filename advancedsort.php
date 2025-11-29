@@ -3,7 +3,9 @@
  $Rev$ | $LastChangedBy$
  $LastChangedDate$
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -136,7 +138,9 @@
 
                     while($therecord = $this->db->fetchArray($queryresult)){
 
-                        if ($therecord["userid"]> 0 and $userqueryline) {
+                        if ($therecord["userid"]>
+##### v0
+and $userqueryline) {
 
                             $userqueryline = false;
                             ?><option value="NA" style="font-style:italic;font-weight:bold"> -- user sorts---------</option><?php

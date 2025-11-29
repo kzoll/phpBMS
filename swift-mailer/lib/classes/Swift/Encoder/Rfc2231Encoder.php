@@ -10,7 +10,9 @@
 
 
 /**
- * Handles RFC 2231 specified Encoding in Swift Mailer.
+ * Handles RFC
+##### v2231
+specified Encoding in Swift Mailer.
  * @package Swift
  * @subpackage Encoder
  * @author Chris Corbyn
@@ -36,10 +38,16 @@ class Swift_Encoder_Rfc2231Encoder implements Swift_Encoder
   
   /**
    * Takes an unencoded string and produces a string encoded according to
-   * RFC 2231 from it.
+   * RFC
+##### v2231
+from it.
    * @param string $string to encode
    * @param int $firstLineOffset
-   * @param int $maxLineLength, optional, 0 indicates the default of 75 bytes
+   * @param int $maxLineLength, optional,
+##### v0
+indicates the default of
+##### v75
+bytes
    * @return string
    */
   public function encodeString($string, $firstLineOffset = 0,

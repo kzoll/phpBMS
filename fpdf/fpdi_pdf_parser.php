@@ -100,7 +100,9 @@ class fpdi_pdf_parser extends pdf_parser
     {
         $pageNo = ((int) $pageNo) - 1;
 
-        if ($pageNo < 0 || $pageNo >= $this->getPageCount()) {
+        if ($pageNo <
+##### v0
+|| $pageNo >= $this->getPageCount()) {
             throw new InvalidArgumentException('Invalid page number!');
         }
 

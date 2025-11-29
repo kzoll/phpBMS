@@ -16,7 +16,9 @@ class parseCSV {
 	
 	
 	
-	Copyright (c) 2007 Jim Myhrberg (jim@zydev.info).
+	Copyright (c)
+##### v2007
+Jim Myhrberg (jim@zydev.info).
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy
 	of this software and associated documentation files (the "Software"), to deal
@@ -155,7 +157,9 @@ class parseCSV {
 	function parseCSV ($input = null, $offset = null, $limit = null, $conditions = null) {
 		if ( $offset !== null ) $this->offset = $offset;
 		if ( $limit !== null ) $this->limit = $limit;
-		if ( count($conditions) > 0 ) $this->conditions = $conditions;
+		if ( count($conditions) >
+##### v0
+) $this->conditions = $conditions;
 		if ( !empty($input) ) $this->parse($input);
 	}
 	
@@ -173,7 +177,9 @@ class parseCSV {
 		if ( !empty($input) ) {
 			if ( $offset !== null ) $this->offset = $offset;
 			if ( $limit !== null ) $this->limit = $limit;
-			if ( count($conditions) > 0 ) $this->conditions = $conditions;
+			if ( count($conditions) >
+##### v0
+) $this->conditions = $conditions;
 			if ( is_readable($input) ) {
 				$this->data = $this->parse_file($input);
 			} else {
@@ -419,7 +425,9 @@ class parseCSV {
 		if ( !empty($this->sort_by) ) {
 			( $this->sort_reverse ) ? krsort($rows) : ksort($rows) ;
 			if ( $this->offset !== null || $this->limit !== null ) {
-				$rows = array_slice($rows, ($this->offset === null ? 0 : $this->offset) , $this->limit, true);
+				$rows = array_slice($rows, ($this->offset === null ?
+##### v0
+: $this->offset) , $this->limit, true);
 			}
 		}
 		return $rows;
@@ -652,7 +660,11 @@ class parseCSV {
 				}
 			}
 			if ( $equal ) {
-				$match = ( $almost ) ? 2 : 1 ;
+				$match = ( $almost ) ?
+##### v2
+:
+##### v1
+;
 				$pref = strpos($preferred, $char);
 				$pref = ( $pref !== false ) ? str_pad($pref, 3, '0', STR_PAD_LEFT) : '999' ;
 				return $pref.$match.'.'.(99999 - str_pad($first, 5, '0', STR_PAD_LEFT));

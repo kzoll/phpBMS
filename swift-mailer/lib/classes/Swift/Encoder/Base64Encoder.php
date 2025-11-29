@@ -10,7 +10,9 @@
 
 
 /**
- * Handles Base 64 Encoding in Swift Mailer.
+ * Handles Base
+##### v64
+Encoding in Swift Mailer.
  * @package Swift
  * @subpackage Encoder
  * @author Chris Corbyn
@@ -20,18 +22,26 @@ class Swift_Encoder_Base64Encoder implements Swift_Encoder
   
   /**
    * Takes an unencoded string and produces a Base64 encoded string from it.
-   * Base64 encoded strings have a maximum line length of 76 characters.
+   * Base64 encoded strings have a maximum line length of
+##### v76
+characters.
    * If the first line needs to be shorter, indicate the difference with
    * $firstLineOffset.
    * @param string $string to encode
    * @param int $firstLineOffset
-   * @param int $maxLineLength, optional, 0 indicates the default of 76 bytes
+   * @param int $maxLineLength, optional,
+##### v0
+indicates the default of
+##### v76
+bytes
    * @return string
    */
   public function encodeString($string, $firstLineOffset = 0,
     $maxLineLength = 0)
   {
-    if (0 >= $maxLineLength || 76 < $maxLineLength)
+    if (0 >= $maxLineLength ||
+##### v76
+< $maxLineLength)
     {
       $maxLineLength = 76;
     }

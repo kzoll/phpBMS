@@ -4,17 +4,37 @@ INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, 
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', 'Quotes', 'invoices.type=\"Quote\"', '8', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', 'Invoices', 'invoices.type=\"Invoice\"', '9', 'role:259ead9f-100b-55b5-508a-27e33a6216bf');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', 'Orders - Today', 'invoices.type=\"Order\" and invoices.orderdate=curdate()', '2', '');
-INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', 'Invoices - Yesterday', 'invoices.type=\"Invoice\" and invoices.invoicedate=date_sub(curdate(),INTERVAL 1 DAY)', '11', '');
-INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', 'Orders - Yesterday', 'invoices.type=\"Orders\" and invoices.orderdate=date_sub(curdate(),INTERVAL 1 DAY)', '3', '');
-INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', 'Orders - Last Week', 'invoices.type=\"Order\" and year(invoices.orderdate)=year(date_sub(curdate(),INTERVAL 7 DAY)) and week(invoices.orderdate)=week(date_sub(curdate(),INTERVAL 7 DAY))', '5', '');
+INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', 'Invoices - Yesterday', 'invoices.type=\"Invoice\" and invoices.invoicedate=date_sub(curdate(),INTERVAL
+##### v1
+DAY)', '11', '');
+INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', 'Orders - Yesterday', 'invoices.type=\"Orders\" and invoices.orderdate=date_sub(curdate(),INTERVAL
+##### v1
+DAY)', '3', '');
+INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', 'Orders - Last Week', 'invoices.type=\"Order\" and year(invoices.orderdate)=year(date_sub(curdate(),INTERVAL
+##### v7
+DAY)) and week(invoices.orderdate)=week(date_sub(curdate(),INTERVAL
+##### v7
+DAY))', '5', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', 'Orders - This Week', 'invoices.type=\"Order\" and year(invoices.orderdate)=year(curdate()) and week(invoices.orderdate)=week(curdate())', '4', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', 'Orders - This Month', 'invoices.type=\"Order\" and year(invoices.orderdate)=year(curdate()) and month(invoices.orderdate)=month(curdate())', '6', '');
-INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', 'Orders - Last Month', 'invoices.type=\"Order\" and year(invoices.orderdate)=year(date_sub(curdate(),INTERVAL 1 MONTH)) and month(invoices.orderdate)=month(date_sub(curdate(),INTERVAL 1 MONTH))', '7', '');
+INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', 'Orders - Last Month', 'invoices.type=\"Order\" and year(invoices.orderdate)=year(date_sub(curdate(),INTERVAL
+##### v1
+MONTH)) and month(invoices.orderdate)=month(date_sub(curdate(),INTERVAL
+##### v1
+MONTH))', '7', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', 'Invoices - Today', 'invoices.type=\"Invoice\" and invoices.invoicedate=curdate()', '10', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', 'Invoices - This Week', 'invoices.type=\"Order\" and year(invoices.orderdate)=year(curdate()) and week(invoices.orderdate)=week(curdate())', '12', 'role:259ead9f-100b-55b5-508a-27e33a6216bf');
-INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', 'Invoices - Last Week', 'invoices.type=\"Invoice\" and year(invoices.invoicedate)=year(date_sub(curdate(),INTERVAL 7 DAY)) and week(invoices.invoicedate)=week(date_sub(curdate(),INTERVAL 7 DAY))', '13', 'role:259ead9f-100b-55b5-508a-27e33a6216bf');
+INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', 'Invoices - Last Week', 'invoices.type=\"Invoice\" and year(invoices.invoicedate)=year(date_sub(curdate(),INTERVAL
+##### v7
+DAY)) and week(invoices.invoicedate)=week(date_sub(curdate(),INTERVAL
+##### v7
+DAY))', '13', 'role:259ead9f-100b-55b5-508a-27e33a6216bf');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', 'Invoices - This Month', 'invoices.type=\"Invoice\" and year(invoices.invoicedate)=year(curdate()) and month(invoices.invoicedate)=month(curdate())', '14', 'role:259ead9f-100b-55b5-508a-27e33a6216bf');
-INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', 'Invoices - Last Month', 'invoices.type=\"Invoice\" and year(invoicedate)=year(date_sub(curdate(),INTERVAL 1 MONTH)) and month(invoicedate)=month(date_sub(curdate(),INTERVAL 1 MONTH))', '15', 'role:259ead9f-100b-55b5-508a-27e33a6216bf');
+INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', 'Invoices - Last Month', 'invoices.type=\"Invoice\" and year(invoicedate)=year(date_sub(curdate(),INTERVAL
+##### v1
+MONTH)) and month(invoicedate)=month(date_sub(curdate(),INTERVAL
+##### v1
+MONTH))', '15', 'role:259ead9f-100b-55b5-508a-27e33a6216bf');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:3342a3d4-c6a2-3a38-6576-419299859561', 'All Records', 'productcategories.id != 0', '1', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:3342a3d4-c6a2-3a38-6576-419299859561', 'Active Records', 'productcategories.inactive=0', '1', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:3342a3d4-c6a2-3a38-6576-419299859561', 'Inactive Records', 'productcategories.inactive=1', '2', '');
@@ -22,8 +42,12 @@ INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, 
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:380d4efa-a825-f377-6fa1-a030b8c58ffe', 'Active', 'paymentmethods.inactive=0', '0', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:380d4efa-a825-f377-6fa1-a030b8c58ffe', 'Inactive', 'paymentmethods.inactive=1', '1', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:43678406-be25-909b-c715-7e2afc7db601', 'ready to post', 'receipts.readytopost = 1', '3', '');
-INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:43678406-be25-909b-c715-7e2afc7db601', 'non-posted, open', 'receipts.posted = 0 AND receipts.status = \'open\'', '1', '');
-INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:43678406-be25-909b-c715-7e2afc7db601', 'non-posted, collected', 'receipts.posted = 0 AND receipts.status = \'collected\'', '2', '');
+INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:43678406-be25-909b-c715-7e2afc7db601', 'non-posted, open', 'receipts.posted =
+##### v0
+AND receipts.status = \'open\'', '1', '');
+INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:43678406-be25-909b-c715-7e2afc7db601', 'non-posted, collected', 'receipts.posted =
+##### v0
+AND receipts.status = \'collected\'', '2', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:43678406-be25-909b-c715-7e2afc7db601', 'All Records', 'receipts.id!=-1', '5', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:43678406-be25-909b-c715-7e2afc7db601', 'non-posted', 'receipts.posted = 0', '0', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:43678406-be25-909b-c715-7e2afc7db601', 'posted', 'receipts.posted = 1', '4', '');
@@ -32,7 +56,9 @@ INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, 
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'Orders - Ready To Post', 'invoices.type = \'Order\' AND invoices.readytopost =1', '8', 'role:259ead9f-100b-55b5-508a-27e33a6216bf');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'Orders - No Payment', 'invoices.type = \'Order\' AND invoices.paymentmethodid IS NULL or invoices.paymentmethodid = 0', '9', 'role:de7e6679-8bb2-29ee-4883-2fcd756fb120');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'Invoices - Today', 'invoices.type=\"Invoice\" and invoices.invoicedate=curdate()', '12', 'role:de7e6679-8bb2-29ee-4883-2fcd756fb120');
-INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'Invoices - Yesterday', 'invoices.type=\"Invoice\" and invoices.invoicedate=date_sub(curdate(),INTERVAL 1 DAY)', '13', 'role:de7e6679-8bb2-29ee-4883-2fcd756fb120');
+INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'Invoices - Yesterday', 'invoices.type=\"Invoice\" and invoices.invoicedate=date_sub(curdate(),INTERVAL
+##### v1
+DAY)', '13', 'role:de7e6679-8bb2-29ee-4883-2fcd756fb120');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'Invoices - This Month', 'invoices.type=\"Invoice\" and year(invoicedate)=year(curdate()) and month(invoicedate)=month(curdate())', '16', 'role:259ead9f-100b-55b5-508a-27e33a6216bf');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'Orders', 'invoices.type=\"Order\"', '1', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'Orders/Invoices - Unpaid', 'invoices.type != \'Quote\' AND invoices.type != \'VOID\' AND invoices.amountpaid != invoices.totalti', '7', 'role:de7e6679-8bb2-29ee-4883-2fcd756fb120');
@@ -40,9 +66,17 @@ INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, 
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'Quotes', 'invoices.type=\"Quote\"', '19', 'role:de7e6679-8bb2-29ee-4883-2fcd756fb120');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'Voided Records', 'invoices.type=\"VOID\"', '20', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'All Records', 'invoices.id != 0', '22', 'role:259ead9f-100b-55b5-508a-27e33a6216bf');
-INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'Invoices - Last Month', 'invoices.type=\"Invoice\" and year(invoicedate)=year(date_sub(curdate(),INTERVAL 1 MONTH)) and month(invoicedate)=month(date_sub(curdate(),INTERVAL 1 MONTH))', '17', 'role:259ead9f-100b-55b5-508a-27e33a6216bf');
+INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'Invoices - Last Month', 'invoices.type=\"Invoice\" and year(invoicedate)=year(date_sub(curdate(),INTERVAL
+##### v1
+MONTH)) and month(invoicedate)=month(date_sub(curdate(),INTERVAL
+##### v1
+MONTH))', '17', 'role:259ead9f-100b-55b5-508a-27e33a6216bf');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'Invoices - This Week', 'invoices.type=\"Invoice\" and year(invoicedate)=year(curdate()) and week(invoicedate)=week(curdate())', '14', 'role:259ead9f-100b-55b5-508a-27e33a6216bf');
-INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'Invoices - Last Week', 'invoices.type=\"Invoice\" and year(invoicedate)=year(date_sub(curdate(),INTERVAL 7 DAY)) and week(invoicedate)=week(date_sub(curdate(),INTERVAL 7 DAY))', '15', 'role:259ead9f-100b-55b5-508a-27e33a6216bf');
+INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'Invoices - Last Week', 'invoices.type=\"Invoice\" and year(invoicedate)=year(date_sub(curdate(),INTERVAL
+##### v7
+DAY)) and week(invoicedate)=week(date_sub(curdate(),INTERVAL
+##### v7
+DAY))', '15', 'role:259ead9f-100b-55b5-508a-27e33a6216bf');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'Orders - Today', 'invoices.type=\"Order\" and invoices.orderdate=curdate()', '6', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'Orders - Credit Memo', '`invoices`.`iscreditmemo` != \'0\' AND `invoices`.`type` = \'Order\'', '10', 'role:de7e6679-8bb2-29ee-4883-2fcd756fb120');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'Invoices - Credit Memo', '`invoices`.`iscreditmemo` != \'0\' AND `invoices`.`type` = \'Invoice\' ', '18', 'role:de7e6679-8bb2-29ee-4883-2fcd756fb120');
@@ -62,7 +96,11 @@ INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, 
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:8179e105-5487-5173-d835-d9d510cc7f1b', 'All Records', 'prerequisites.id != 0', '1', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:97760a4f-1c1a-a108-d05f-5fc4ec59583c', 'All Records', 'postingsessions.id!=-1', '2', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:97760a4f-1c1a-a108-d05f-5fc4ec59583c', 'This Month\'s Sessions', 'YEAR(postingsessions.sessiondate) = YEAR(NOW()) AND MONTH(postingsessions.sessiondate) = MONTH(NOW())', '0', '');
-INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:97760a4f-1c1a-a108-d05f-5fc4ec59583c', 'Last Month\'s Sessions', 'YEAR(postingsessions.sessiondate) = YEAR(DATE_SUB(NOW(),INTERVAL 1 MONTH)) AND MONTH(postingsessions.sessiondate) = MONTH(DATE_SUB(NOW(),INTERVAL 1 MONTH))', '1', '');
+INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:97760a4f-1c1a-a108-d05f-5fc4ec59583c', 'Last Month\'s Sessions', 'YEAR(postingsessions.sessiondate) = YEAR(DATE_SUB(NOW(),INTERVAL
+##### v1
+MONTH)) AND MONTH(postingsessions.sessiondate) = MONTH(DATE_SUB(NOW(),INTERVAL
+##### v1
+MONTH))', '1', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:c595dbe7-6c77-1e02-5e81-c2e215736e9c', 'All Records', 'aritems.id!=-1', '3', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:c595dbe7-6c77-1e02-5e81-c2e215736e9c', 'open items', 'aritems.status = \'open\'', '0', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:c595dbe7-6c77-1e02-5e81-c2e215736e9c', 'closed items', 'aritems.status = \'closed\'', '1', '');

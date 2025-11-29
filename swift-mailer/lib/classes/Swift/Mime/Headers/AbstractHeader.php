@@ -185,7 +185,9 @@ abstract class Swift_Mime_Headers_AbstractHeader implements Swift_Mime_Header
   }
   
   /**
-   * Get this Header rendered as a RFC 2822 compliant string.
+   * Get this Header rendered as a RFC
+##### v2822
+compliant string.
    * @return string
    * @throws Swift_RfcComplianceException
    */
@@ -219,7 +221,9 @@ abstract class Swift_Mime_Headers_AbstractHeader implements Swift_Mime_Header
   }
   
   /**
-   * Produces a compliant, formatted RFC 2822 'phrase' based on the string given.
+   * Produces a compliant, formatted RFC
+##### v2822
+'phrase' based on the string given.
    * @param Swift_Mime_Header $header
    * @param string $string as displayed
    * @param string $charset of the text
@@ -377,7 +381,9 @@ abstract class Swift_Mime_Headers_AbstractHeader implements Swift_Mime_Header
     
     $encodedTextLines = explode("\r\n",
       $this->_encoder->encodeString(
-        $token, $firstLineOffset, 75 - $encodingWrapperLength
+        $token, $firstLineOffset,
+##### v75
+- $encodingWrapperLength
         )
       );
     
@@ -463,7 +469,9 @@ abstract class Swift_Mime_Headers_AbstractHeader implements Swift_Mime_Header
   
   /**
    * Takes an array of tokens which appear in the header and turns them into
-   * an RFC 2822 compliant string, adding FWSP where needed.
+   * an RFC
+##### v2822
+compliant string, adding FWSP where needed.
    * @param string[] $tokens
    * @return string
    * @access private
@@ -480,8 +488,12 @@ abstract class Swift_Mime_Headers_AbstractHeader implements Swift_Mime_Header
     {
       //Line longer than specified maximum or token was just a new line
       if (("\r\n" == $token) ||
-        ($i > 0 && strlen($currentLine . $token) > $this->_lineLength)
-        && 0 < strlen($currentLine))
+        ($i >
+##### v0
+&& strlen($currentLine . $token) > $this->_lineLength)
+        &&
+##### v0
+< strlen($currentLine))
       {
         $headerLines[] = '';
         $currentLine =& $headerLines[$lineCount++];

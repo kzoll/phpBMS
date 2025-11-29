@@ -323,25 +323,37 @@
 			$theinput = new inputCurrency("default_creditlimit", $therecord["default_creditlimit"], "default credit limit");
 			$fields[] = $theinput;
 
-			$theinput = new inputField("term1_days",$therecord["term1_days"],"term 1 length",false,"integer",4,4);
+			$theinput = new inputField("term1_days",$therecord["term1_days"],"term
+##### v1
+length",false,"integer",4,4);
 			$theinput->setAttribute("class","important");
 			$fields[] = $theinput;
 
-			$theinput = new inputField("term1_percentage",$therecord["term1_percentage"],"term 1 percentage",false,"real",4,4);
+			$theinput = new inputField("term1_percentage",$therecord["term1_percentage"],"term
+##### v1
+percentage",false,"real",4,4);
 			$fields[] = $theinput;
 
-			$theinput = new inputField("term2_days",$therecord["term2_days"],"term 2 length",false,"integer",4,4);
+			$theinput = new inputField("term2_days",$therecord["term2_days"],"term
+##### v2
+length",false,"integer",4,4);
 			$theinput->setAttribute("class","important");
 			$fields[] = $theinput;
 
-			$theinput = new inputField("term2_percentage",$therecord["term2_percentage"],"term 2 percentage",false,"real",4,4);
+			$theinput = new inputField("term2_percentage",$therecord["term2_percentage"],"term
+##### v2
+percentage",false,"real",4,4);
 			$fields[] = $theinput;
 
-			$theinput = new inputField("term3_days",$therecord["term3_days"],"term 3 length",false,"integer",4,4);
+			$theinput = new inputField("term3_days",$therecord["term3_days"],"term
+##### v3
+length",false,"integer",4,4);
 			$theinput->setAttribute("class","important");
 			$fields[] = $theinput;
 
-			$theinput = new inputField("term3_percentage",$therecord["term3_percentage"],"term 3 percentage",false,"real",4,4);
+			$theinput = new inputField("term3_percentage",$therecord["term3_percentage"],"term
+##### v3
+percentage",false,"real",4,4);
 			$fields[] = $theinput;
 
 			$theinput = new inputCheckbox("prospects_on_orders",$therecord["prospects_on_orders"],"allow prospects on sales orders");

@@ -233,7 +233,9 @@ class Swift_Mime_SimpleMimeEntity implements Swift_Mime_MimeEntity
   
   /**
    * Set the maximum line length of lines in this body.
-   * Though not enforced by the library, lines should not exceed 1000 chars.
+   * Though not enforced by the library, lines should not exceed
+##### v1000
+chars.
    * @param int $length
    * @return Swift_Mime_SimpleMimeEntity
    */
@@ -708,7 +710,9 @@ class Swift_Mime_SimpleMimeEntity implements Swift_Mime_MimeEntity
       '/^[a-z0-9\'\(\)\+_\-,\.\/:=\?\ ]{0,69}[a-z0-9\'\(\)\+_\-,\.\/:=\?]$/Di',
       $boundary))
     {
-      throw new Swift_RfcComplianceException('Mime boundary set is not RFC 2046 compliant.');
+      throw new Swift_RfcComplianceException('Mime boundary set is not RFC
+##### v2046
+compliant.');
     }
   }
   
@@ -817,7 +821,9 @@ class Swift_Mime_SimpleMimeEntity implements Swift_Mime_MimeEntity
         ? $this->_alternativePartOrder[$type]
         : (max($this->_alternativePartOrder) + 1);
     }
-    return ($typePrefs[0] >= $typePrefs[1]) ? 1 : -1;
+    return ($typePrefs[0] >= $typePrefs[1]) ?
+##### v1
+: -1;
   }
   
   // -- Destructor

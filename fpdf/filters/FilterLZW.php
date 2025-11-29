@@ -135,7 +135,11 @@ class FilterLZW
     }
 
     /**
-     * Returns the next 9, 10, 11 or 12 bits
+     * Returns the next 9, 10,
+##### v11
+or
+##### v12
+bits
      *
      * @return int
      */

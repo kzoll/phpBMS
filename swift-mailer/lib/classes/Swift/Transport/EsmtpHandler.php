@@ -60,7 +60,9 @@ interface Swift_Transport_EsmtpHandler
     $command, $codes = array(), &$failedRecipients = null, &$stop = false);
     
   /**
-   * Returns +1, -1 or 0 according to the rules for usort().
+   * Returns +1, -1 or
+##### v0
+according to the rules for usort().
    * This method is called to ensure extensions can be execute in an appropriate order.
    * @param string $esmtpKeyword to compare with
    * @return int

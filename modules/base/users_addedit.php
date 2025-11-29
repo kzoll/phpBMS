@@ -3,7 +3,9 @@
  $Rev$ | $LastChangedBy$
  $LastChangedDate$
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -102,7 +104,11 @@
 
         if(!$therecord["id"]) $therecord["smtpport"] = 25; // Set default
         $theinput = new inputField("smtpport",$therecord["smtpport"],"SMTP port",false,"integer",10,10);
-        $theinput->setAttribute("title","Enter the port number of your SMTP server. Use 25 for most unsecure servers and 465 for most secure servers. Defaults to: 25");
+        $theinput->setAttribute("title","Enter the port number of your SMTP server. Use
+##### v25
+for most unsecure servers and
+##### v465
+for most secure servers. Defaults to: 25");
         $theform->addField($theinput);
         
         $theinput = new inputField("smtpuser",$therecord["smtpuser"],"SMTP username",false,NULL,32,255);

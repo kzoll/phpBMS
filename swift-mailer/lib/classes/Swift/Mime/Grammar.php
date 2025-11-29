@@ -9,7 +9,9 @@
  */
 
 /**
- * Defines the grammar to use for validation, implements the RFC 2822 (and friends) ABNF grammar definitions.
+ * Defines the grammar to use for validation, implements the RFC
+##### v2822
+(and friends) ABNF grammar definitions.
  * @package Swift
  * @subpackage Mime
  * @author Fabien Potencier
@@ -25,14 +27,18 @@ class Swift_Mime_Grammar
   private $_specials = array();
 
   /**
-   * Tokens defined in RFC 2822 (and some related RFCs).
+   * Tokens defined in RFC
+##### v2822
+(and some related RFCs).
    * @var string[]
    * @access private
    */
   private $_grammar = array();
   
   /**
-   * Initialize some RFC 2822 (and friends) ABNF grammar definitions.
+   * Initialize some RFC
+##### v2822
+(and friends) ABNF grammar definitions.
    * @access protected
    */
   public function __construct()
@@ -42,7 +48,9 @@ class Swift_Mime_Grammar
       ':', ';', '@', ',', '.', '"'
       );
     
-    /*** Refer to RFC 2822 for ABNF grammar ***/
+    /*** Refer to RFC
+##### v2822
+for ABNF grammar ***/
     
     //All basic building blocks
     $this->_grammar['NO-WS-CTL'] = '[\x01-\x08\x0B\x0C\x0E-\x19\x7F]';
@@ -126,7 +134,9 @@ class Swift_Mime_Grammar
   }
   
   /**
-   * Returns the tokens defined in RFC 2822 (and some related RFCs).
+   * Returns the tokens defined in RFC
+##### v2822
+(and some related RFCs).
    * @return array
    */
   public function getGrammarDefinitions()

@@ -1,5 +1,7 @@
 /*  Prototype JavaScript framework
- *  (c) 2005 Sam Stephenson <sam@conio.net>
+ *  (c)
+##### v2005
+Sam Stephenson <sam@conio.net>
  *  Prototype is freely distributable under the terms of an MIT-style license.
  *  For details, see the Prototype web site: http://prototype.conio.net/
 /*--------------------------------------------------------------------------*/
@@ -87,7 +89,9 @@ Object.extend(Element, {
 	cleanWhitespace: function(element) {
 		element = $(element);
 		$c(element.childNodes).each(function(node){
-			if (node.nodeType == 3 && !/\S/.test(node.nodeValue)) Element.remove(node);
+			if (node.nodeType ==
+##### v3
+&& !/\S/.test(node.nodeValue)) Element.remove(node);
 		});
 	},
 

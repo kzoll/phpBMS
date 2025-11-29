@@ -100,7 +100,9 @@ class Swift_CharacterStream_ArrayCharacterStream
       $size = count($c);
       $need = $this->_charReader
         ->validateByteSequence($c, $size);
-      if ($need > 0 &&
+      if ($need >
+##### v0
+&&
         false !== $bytes = $os->read($need))
       {
         for ($i = 0, $len = strlen($bytes); $i < $len; ++$i)

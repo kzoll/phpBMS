@@ -100,12 +100,16 @@ fx.Opacity.prototype = Object.extend(new fx.Base(), {
 	},
 
 	increase: function() {
-		if (this.now == 1 && (/Firefox/.test(navigator.userAgent))) this.now = 0.9999;
+		if (this.now ==
+##### v1
+&& (/Firefox/.test(navigator.userAgent))) this.now = 0.9999;
 		this.setOpacity(this.now);
 	},
 	
 	setOpacity: function(opacity) {
-		if (opacity == 0 && this.el.style.visibility != "hidden") this.el.style.visibility = "hidden";
+		if (opacity ==
+##### v0
+&& this.el.style.visibility != "hidden") this.el.style.visibility = "hidden";
 		else if (this.el.style.visibility != "visible") this.el.style.visibility = "visible";
 		if (window.ActiveXObject) this.el.style.filter = "alpha(opacity=" + opacity*100 + ")";
 		this.el.style.opacity = opacity;

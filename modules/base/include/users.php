@@ -1,9 +1,15 @@
 <?php
 /*
- $Rev: 254 $ | $LastChangedBy: brieb $
- $LastChangedDate: 2007-08-07 18:38:38 -0600 (Tue, 07 Aug 2007) $
+ $Rev:
+##### v254
+$ | $LastChangedBy: brieb $
+ $LastChangedDate: 2007-08-07 18:38:38 -0600 (Tue,
+##### v07
+Aug 2007) $
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -107,11 +113,15 @@ if(class_exists("phpbmsTable")){
 			//---------[ check booleans ]---------------------------------
 			if(isset($variables["revoked"]))
 				if($variables["revoked"] && $variables["revoked"] != 1)
-					$this->verifyErrors[] = "The `revoked` field must be a boolean (equivalent to 0 or exactly 1).";
+					$this->verifyErrors[] = "The `revoked` field must be a boolean (equivalent to
+##### v0
+or exactly 1).";
 
 			if(isset($variables["portalaccess"])){
 				if($variables["portalaccess"] && $variables["portalaccess"] != 1)
-					$this->verifyErrors[] = "The `portalaccess` field must be a boolean (equivalent to 0 or exactly 1).";
+					$this->verifyErrors[] = "The `portalaccess` field must be a boolean (equivalent to
+##### v0
+or exactly 1).";
 
 				if($variables["portalaccess"]){
 
@@ -125,7 +135,9 @@ if(class_exists("phpbmsTable")){
 
 			if(isset($variables["admin"]))
 				if($variables["admin"] && $variables["admin"] != 1)
-					$this->verifyErrors[] = "The `admin` field must be a boolean (equivalent to 0 or exactly 1).";
+					$this->verifyErrors[] = "The `admin` field must be a boolean (equivalent to
+##### v0
+or exactly 1).";
 
 			return parent::verifyVariables($variables);
 

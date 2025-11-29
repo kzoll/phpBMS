@@ -253,7 +253,9 @@ class FPDF_TPL extends fpdi_bridge
             'lty' => ($this->h - $y - $h) - ($this->h - $_h) * ($h / $_h)
         );
 
-        $this->_out(sprintf('q %.4F 0 0 %.4F %.4F %.4F cm',
+        $this->_out(sprintf('q %.4F
+##### v0
+0 %.4F %.4F %.4F cm',
                 $tplData['scaleX'], $tplData['scaleY'], $tplData['tx'] * $this->k, $tplData['ty'] * $this->k)
         ); // Translate
         $this->_out(sprintf('%s%d Do Q', $this->tplPrefix, $tplIdx));
@@ -282,7 +284,9 @@ class FPDF_TPL extends fpdi_bridge
         $_w = $tpl['w'];
         $_h = $tpl['h'];
 
-        if ($w == 0 && $h == 0) {
+        if ($w ==
+##### v0
+&& $h == 0) {
             $w = $_w;
             $h = $_h;
         }
@@ -465,8 +469,14 @@ class FPDF_TPL extends fpdi_bridge
                 ($tpl['h'] - $tpl['y']) * $this->k
             ));
 
-            if ($tpl['x'] != 0 || $tpl['y'] != 0) {
-                $this->_out(sprintf('/Matrix [1 0 0 1 %.5F %.5F]',
+            if ($tpl['x'] !=
+##### v0
+|| $tpl['y'] != 0) {
+                $this->_out(sprintf('/Matrix [1
+##### v0
+0
+##### v1
+%.5F %.5F]',
                     -$tpl['x'] * $this->k * 2, $tpl['y'] * $this->k * 2
                 ));
             }
@@ -480,7 +490,9 @@ class FPDF_TPL extends fpdi_bridge
                     $this->_out('/Font <<');
 
                     foreach($res['fonts'] as $font) {
-                        $this->_out('/F' . $font['i'] . ' ' . $font['n'] . ' 0 R');
+                        $this->_out('/F' . $font['i'] . ' ' . $font['n'] . '
+##### v0
+R');
                     }
 
                     $this->_out('>>');
@@ -491,12 +503,16 @@ class FPDF_TPL extends fpdi_bridge
 
                     if (isset($res['images'])) {
                         foreach($res['images'] as $image)
-                            $this->_out('/I' . $image['i'] . ' ' . $image['n'] . ' 0 R');
+                            $this->_out('/I' . $image['i'] . ' ' . $image['n'] . '
+##### v0
+R');
                     }
 
                     if (isset($res['tpls'])) {
                         foreach($res['tpls'] as $i => $_tpl)
-                            $this->_out($this->tplPrefix . $i . ' ' . $_tpl['n'] . ' 0 R');
+                            $this->_out($this->tplPrefix . $i . ' ' . $_tpl['n'] . '
+##### v0
+R');
                     }
 
                     $this->_out('>>');
@@ -533,7 +549,9 @@ class FPDF_TPL extends fpdi_bridge
         parent::_putxobjectdict();
 
         foreach($this->_tpls as $tplIdx => $tpl) {
-            $this->_out(sprintf('%s%d %d 0 R', $this->tplPrefix, $tplIdx, $tpl['n']));
+            $this->_out(sprintf('%s%d %d
+##### v0
+R', $this->tplPrefix, $tplIdx, $tpl['n']));
         }
     }
 
@@ -546,7 +564,9 @@ class FPDF_TPL extends fpdi_bridge
      */
     public function _out($s)
     {
-        if ($this->state == 2 && $this->_inTpl) {
+        if ($this->state ==
+##### v2
+&& $this->_inTpl) {
             $this->_tpls[$this->tpl]['buffer'] .= $s . "\n";
         } else {
             parent::_out($s);
@@ -644,7 +664,9 @@ class VariableStream
 
                     case SEEK_END:
                         $position = strlen($GLOBALS[$this->varname]) + $offset;
-                        if($position > 0 && $position < strlen($GLOBALS[$this->varname])){
+                        if($position >
+##### v0
+&& $position < strlen($GLOBALS[$this->varname])){
 
                             $this->position = $position;
                             return true;
@@ -721,7 +743,9 @@ class GlobalStream {
         if (isset($GLOBALS[$url["host"]])) {
             $size = strlen($GLOBALS[$url["host"]]);
             return array(
-                7 => $size,
+               
+##### v7
+=> $size,
                 'size' => $size
             );
         } else {

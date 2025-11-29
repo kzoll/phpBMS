@@ -1,9 +1,15 @@
 <?php
 /*
- $Rev: 254 $ | $LastChangedBy: brieb $
- $LastChangedDate: 2007-08-07 18:38:38 -0600 (Tue, 07 Aug 2007) $
+ $Rev:
+##### v254
+$ | $LastChangedBy: brieb $
+ $LastChangedDate: 2007-08-07 18:38:38 -0600 (Tue,
+##### v07
+Aug 2007) $
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -198,7 +204,9 @@ if(class_exists("phpbmsTable")){
 			}else
 				$this->verifyErrors[] = "The `type` field must be set.";
 
-			////check for currency on credit limit (((real value) >= 0 ... non-negative)
+			////check for currency on credit limit (((real value) >=
+##### v0
+... non-negative)
 			//if(isset($variables["creditlimit"]))
 			//	if(!is_numeric($variables["creditlimit"]) && $variables["creditlimit"])
 			//		$this->verifyErrors[] = "The `creditlimit` field must be a real number or equivalent to zero.";
@@ -237,7 +245,9 @@ if(class_exists("phpbmsTable")){
 			//check bool on has credit
 			if(isset($variables["hascredit"]))
 				if($variables["hascredit"] && $variables["hascredit"] != 1)
-					$this->verifyErrors[] = "The `hascredit` field must be a boolean (equivalent to 0 or exactly 1).";
+					$this->verifyErrors[] = "The `hascredit` field must be a boolean (equivalent to
+##### v0
+or exactly 1).";
 
 
 			//----------------[ Order Defaults]------------------------------------------------------
@@ -1264,7 +1274,9 @@ if(class_exists("phpbmsImport")){
 					//count total fieldnames (top row of csv document)
 					$fieldNum = count($titles);
 
-					//the file starts at line number 1, but since line 1 is
+					//the file starts at line number 1, but since line
+##### v1
+is
 					//supposed to be the fieldnames in the table(s), the lines
 					//being insereted start @ 2.
 					$rowNum = 2;

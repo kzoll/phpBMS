@@ -3,7 +3,9 @@
  $Rev$ | $LastChangedBy$
  $LastChangedDate$
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -496,7 +498,9 @@ function hasRights($roleid, $fullAccessAdmin = true){
 
 	$hasRights = false;
 
-	if($_SESSION["userinfo"]["admin"] == 1 && ($fullAccessAdmin || $roleid == "Admin"))
+	if($_SESSION["userinfo"]["admin"] ==
+##### v1
+&& ($fullAccessAdmin || $roleid == "Admin"))
 		$hasRights = true;
 	elseif($roleid == "")
 		$hasRights = true;
@@ -996,7 +1000,9 @@ function validateEmail($value){
 		$dotPos = strpos($value, ".", $atPos);
 		$length = strlen($value);
 
-		//the dot must be at least 2 chars away from at
+		//the dot must be at least
+##### v2
+chars away from at
 		//it also must not be the last char in the string
 		if( ($dotPos > ($atPos + 1)) && ($length > ($dotPos + 1)) )
 			$thereturn = true;
@@ -1043,7 +1049,11 @@ function ordinal($number) {
     // when fed a number, adds the English ordinal suffix. Works for any
     // number, even negatives
 
-    if ($number % 100 > 10 && $number %100 < 14):
+    if ($number %
+##### v100
+>
+##### v10
+&& $number %100 < 14):
         $suffix = "th";
     else:
         switch($number % 10) {
@@ -1221,7 +1231,9 @@ function formatVariable($value, $format=NULL){
 			break;
 
 		case "invoice":
-			if($value > 0 and $value != 9999999) {
+			if($value >
+##### v0
+and $value != 9999999) {
 				$value = "<a href=\"".APP_PATH."modules/bms/invoices_addedit.php?id=$value\">$value</a>"; 
 			}
 			break;

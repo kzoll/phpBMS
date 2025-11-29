@@ -3,7 +3,9 @@
  $Rev$ | $LastChangedBy$
  $LastChangedDate$
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -47,7 +49,9 @@ COD       - (optional) Package is being sent C.O.D., valid options are YES
 FROM      - (required) Source (ship from) postal code.
 HANDLING  - (optional) Requires special handling (eg. - any article that
                        is not fully encased in an outside shipping container,
-					   or any package that exceeds 60 inches in length).
+					   or any package that exceeds
+##### v60
+inches in length).
 HAZARD    - (optional) Package contains hazardous material, valid options are YES
                        and NO, defaults to NO.
 HEIGHT    - (optional) Height (in inches) of oversized package.
@@ -74,7 +78,9 @@ SERVICE   - (required) UPS Service ID, valid service IDs are:
                        2DA    - 2nd Day Air
                        2DML   - 2nd Day Air A.M. Letter
                        2DAL   - 2nd Day Air Letter
-                       3DS    - 3 Day Select
+                       3DS    -
+##### v3
+Day Select
                        GNDCOM - Ground Commercial
                        GNDRES - Ground Residential
 SHIPNOT1  - (optional) First ship notification, valid options are NONE

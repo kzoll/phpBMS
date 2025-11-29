@@ -305,15 +305,21 @@ class pushrecords extends phpbmsTable{
           */
         if(isset($variables["useuuid"]))
 				if($variables["useuuid"] && $variables["useuuid"] != 1)
-					$this->verifyErrors[] = "The `useuuid` field must be a boolean (equivalent to 0 or exactly 1).";
+					$this->verifyErrors[] = "The `useuuid` field must be a boolean (equivalent to
+##### v0
+or exactly 1).";
         
         if(isset($variables["keepdestid"]))
 				if($variables["keepdestid"] && $variables["keepdestid"] != 1)
-					$this->verifyErrors[] = "The `keepdestid` field must be a boolean (equivalent to 0 or exactly 1).";
+					$this->verifyErrors[] = "The `keepdestid` field must be a boolean (equivalent to
+##### v0
+or exactly 1).";
                     
         if(isset($variables["ssl"]))
 				if($variables["ssl"] && $variables["ssl"] != 1)
-					$this->verifyErrors[] = "The `ssl` field must be a boolean (equivalent to 0 or exactly 1).";
+					$this->verifyErrors[] = "The `ssl` field must be a boolean (equivalent to
+##### v0
+or exactly 1).";
         
         return parent::verifyVariables($variables);
         

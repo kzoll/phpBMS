@@ -42,7 +42,9 @@
 
 
 #catDiv{
-    background:#F7FAFA none repeat scroll 0 0;
+    background:#F7FAFA none repeat scroll
+##### v0
+0;
     border:1px solid #ABB1B1;
     margin:0 5px 10px;
     overflow: auto;

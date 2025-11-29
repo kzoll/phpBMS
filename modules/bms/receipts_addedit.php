@@ -1,7 +1,9 @@
 <?php
 /*
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -113,7 +115,9 @@
 		$theinput = new inputField("bankname", $therecord["bankname"], "bank name", false, false, 30, 64);
 		$theform->addField($theinput);
 
-		$theinput = new inputField("checkno", $therecord["checkno"], "check number", false, false, 20 , 32);
+		$theinput = new inputField("checkno", $therecord["checkno"], "check number", false, false,
+##### v20
+, 32);
 		$theform->addField($theinput);
 
 		$theinput = new inputComparisonField("accountnumber", $therecord["accountnumber"], "account number", false, NULL, 20, 64);

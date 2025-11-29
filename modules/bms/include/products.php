@@ -1,9 +1,15 @@
 <?php
 /*
- $Rev: 254 $ | $LastChangedBy: brieb $
- $LastChangedDate: 2007-08-07 18:38:38 -0600 (Tue, 07 Aug 2007) $
+ $Rev:
+##### v254
+$ | $LastChangedBy: brieb $
+ $LastChangedDate: 2007-08-07 18:38:38 -0600 (Tue,
+##### v07
+Aug 2007) $
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -219,19 +225,27 @@ if(class_exists("phpbmsTable")){
 			//check boolean
 			if(isset($variables["webenabled"]))
 				if($variables["webenabled"] && $variables["webenabled"] != 1)
-					$this->verifyErrors[] = "The `webenabled` field must be a boolean (equivalent to 0 or exactly 1).";
+					$this->verifyErrors[] = "The `webenabled` field must be a boolean (equivalent to
+##### v0
+or exactly 1).";
 
 			if(isset($variables["isoversized"]))
 				if($variables["isoversized"] && $variables["isoversized"] != 1)
-					$this->verifyErrors[] = "The `isoversized` field must be a boolean (equivalent to 0 or exactly 1).";
+					$this->verifyErrors[] = "The `isoversized` field must be a boolean (equivalent to
+##### v0
+or exactly 1).";
 
 			if(isset($variables["isprepackaged"]))
 				if($variables["isprepackaged"] && $variables["isprepackaged"] != 1)
-					$this->verifyErrors[] = "The `isprepackaged` field must be a boolean (equivalent to 0 or exactly 1).";
+					$this->verifyErrors[] = "The `isprepackaged` field must be a boolean (equivalent to
+##### v0
+or exactly 1).";
 
 			if(isset($variables["taxable"]))
 				if($variables["taxable"] && $variables["taxable"] != 1)
-					$this->verifyErrors[] = "The `taxable` field must be a boolean (equivalent to 0 or exactly 1).";
+					$this->verifyErrors[] = "The `taxable` field must be a boolean (equivalent to
+##### v0
+or exactly 1).";
 
 			return parent::verifyVariables($variables);
 
@@ -335,7 +349,9 @@ if(class_exists("phpbmsTable")){
 					$variables = $this->_commonPrepareVariables($variables);
 					if(isset($variables["packagesperitem"]))
 						if($variables["packagesperitem"])
-							$variables["packagesperitem"] = 1 / $variables["packagesperitem"];
+							$variables["packagesperitem"] =
+##### v1
+/ $variables["packagesperitem"];
 					break;
 
 			}//end switch
@@ -400,7 +416,9 @@ if(class_exists("phpbmsTable")){
 				FROM
 					`productcategories`
 				WHERE
-					`inactive` = 0 OR `uuid` ='".$categoryid."'
+					`inactive` =
+##### v0
+OR `uuid` ='".$categoryid."'
 				ORDER BY
 					`name`
 				";

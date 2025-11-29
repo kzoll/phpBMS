@@ -45,7 +45,9 @@
 }
 
 #crTile P{
-    margin: 5px 0 5px 42px;
+    margin: 5px
+##### v0
+5px 42px;
     padding: 0;
 }
 
@@ -168,7 +170,9 @@ H2{
 
         .recordCommands li a{
             display:block;
-            margin:2px 0 0 2px;
+            margin:2px
+##### v0
+0 2px;
             width:26px;
             height:26px;
             background-repeat:no-repeat;

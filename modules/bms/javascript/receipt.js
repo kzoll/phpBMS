@@ -72,7 +72,9 @@ receipt = {
 		var transactionp = getObjectFromID("transactionP");
 		var transactionscript = getObjectFromID("processscript");
 
-		if(paymentTypes["s"+paymentmethodid.value]["onlineprocess"] == 1 && paymentTypes["s"+paymentmethodid.value]["processscript"]){
+		if(paymentTypes["s"+paymentmethodid.value]["onlineprocess"] ==
+##### v1
+&& paymentTypes["s"+paymentmethodid.value]["processscript"]){
 
 			transactionscript.value = paymentTypes["s"+paymentmethodid.value]["processscript"];
 			transactionp.style.display = "block";
@@ -434,7 +436,13 @@ aritems = {
 		tempINPUT.id = theTR.id+"DocDate";
 		if(itemObj.type == "invoice"){
 
-			var dueDate = new Date( stringToDate(itemObj.itemdate,"SQL").getTime() + (TERM1_DAYS * 24 * 60 * 60 * 1000));
+			var dueDate = new Date( stringToDate(itemObj.itemdate,"SQL").getTime() + (TERM1_DAYS *
+##### v24
+*
+##### v60
+*
+##### v60
+* 1000));
 			tempINPUT.value = dateToString(dueDate);
 
 		}//end if
@@ -671,7 +679,9 @@ newItemDialog = {
 	show: function(e) {
 
 		var clientid = getObjectFromID("clientid");
-		if(clientid.value == 0 || !clientid.value){
+		if(clientid.value ==
+##### v0
+|| !clientid.value){
 
 			alert("You must first choose a client before adding items.");
 			return false;

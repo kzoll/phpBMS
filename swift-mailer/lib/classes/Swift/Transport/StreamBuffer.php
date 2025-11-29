@@ -289,9 +289,15 @@ class Swift_Transport_StreamBuffer
   {
     $command = $this->_params['command'];
     $descriptorSpec = array(
-      0 => array('pipe', 'r'),
-      1 => array('pipe', 'w'),
-      2 => array('pipe', 'w')
+     
+##### v0
+=> array('pipe', 'r'),
+     
+##### v1
+=> array('pipe', 'w'),
+     
+##### v2
+=> array('pipe', 'w')
       );
     $this->_stream = proc_open($command, $descriptorSpec, $pipes);
     stream_set_blocking($pipes[2], 0);

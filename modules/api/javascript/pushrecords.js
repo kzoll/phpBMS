@@ -1,8 +1,14 @@
 /*
- $Rev: 643 $ | $LastChangedBy: nate $
- $LastChangedDate: 2009-09-02 14:00:56 -0600 (Wed, 02 Sep 2009) $
+ $Rev:
+##### v643
+$ | $LastChangedBy: nate $
+ $LastChangedDate: 2009-09-02 14:00:56 -0600 (Wed,
+##### v02
+Sep 2009) $
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |

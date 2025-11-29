@@ -1,10 +1,14 @@
 MailChimp PHP API Wrapper 1.2
 -------------------------------------------------------------------------------
 API Version: 1.2
-Tested under: PHP 4, PHP 5 (recommended)
+Tested under: PHP 4, PHP
+##### v5
+(recommended)
 
 Requires:
-    * PHP 4 or PHP 5
+    * PHP
+##### v4
+or PHP 5
 
 ===== About =====
 Our MCAPI (MailChimp API) wrapper class is provided to help jump-start your PHP 
@@ -53,7 +57,9 @@ That can be turned on and off as necessary.
 
 Custom Timeouts
 ------------------
-This wrapper defaults the Timeout value for a call to 300 seconds. To adjust that for
+This wrapper defaults the Timeout value for a call to
+##### v300
+seconds. To adjust that for
 various calls, simply run:
 	$api->setTimeout($your_value_in_seconds);
 

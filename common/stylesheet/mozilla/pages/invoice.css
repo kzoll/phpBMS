@@ -55,7 +55,9 @@
 #fsAddresses{
 	display:block;
 	border:0;
-	margin:23px 0 0;
+	margin:23px
+##### v0
+0;
 	padding:0;
 }
 
@@ -195,7 +197,9 @@
 }
 
     .lineitems p{
-        margin:0 0 2px 5px;
+        margin:0
+##### v0
+2px 5px;
         padding:0;
     }
 
@@ -252,7 +256,9 @@
 	text-align:right;
 	line-height:24px;
 	color:#666666;
-	padding:0 4px 0 4px;
+	padding:0 4px
+##### v0
+4px;
 	border:0;
 }
 

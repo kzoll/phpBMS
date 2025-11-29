@@ -1,9 +1,15 @@
 <?php
 /*
- $Rev: 170 $ | $LastChangedBy: brieb $
- $LastChangedDate: 2006-11-10 19:49:30 -0700 (Fri, 10 Nov 2006) $
+ $Rev:
+##### v170
+$ | $LastChangedBy: brieb $
+ $LastChangedDate: 2006-11-10 19:49:30 -0700 (Fri,
+##### v10
+Nov 2006) $
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -47,11 +53,15 @@ if(class_exists("phpbmsTable")){
 
 			if(isset($variables["setreadytopost"]))
 				if($variables["setreadytopost"] && $variables["setreadytopost"] != 1)
-					$this->verifyErrors[] = "The `setreadytopost` field must be a boolean (equivalent to 0 or exactly 1).";
+					$this->verifyErrors[] = "The `setreadytopost` field must be a boolean (equivalent to
+##### v0
+or exactly 1).";
 
 			if(isset($variables["invoicedefault"]))
 				if($variables["invoicedefault"] && $variables["invoicedefault"] != 1)
-					$this->verifyErrors[] = "The `invoicedefault` field must be a boolean (equivalent to 0 or exactly 1).";
+					$this->verifyErrors[] = "The `invoicedefault` field must be a boolean (equivalent to
+##### v0
+or exactly 1).";
 
 			if(isset($variables["defaultassignedtoid"])){
 

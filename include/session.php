@@ -3,7 +3,9 @@
  $Rev$ | $LastChangedBy$
  $LastChangedDate$
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -340,7 +342,9 @@ class phpbmsSession{
 		// it adds the phpBMS root as an included path.
 
 
-		//need to look for settings file... only go up a total of 10 directories
+		//need to look for settings file... only go up a total of
+##### v10
+directories
 		$currdirectory = getcwd();
 
 		//Prep the setting of the application path;

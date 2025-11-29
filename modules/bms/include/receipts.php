@@ -1,9 +1,15 @@
 <?php
 /*
- $Rev: 254 $ | $LastChangedBy: brieb $
- $LastChangedDate: 2007-08-07 18:38:38 -0600 (Tue, 07 Aug 2007) $
+ $Rev:
+##### v254
+$ | $LastChangedBy: brieb $
+ $LastChangedDate: 2007-08-07 18:38:38 -0600 (Tue,
+##### v07
+Aug 2007) $
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -305,7 +311,9 @@ if(class_exists("phpbmsTable")){
 
 			$therecord = parent::getRecord($id, $useUuid);
 
-			if((int)$therecord["posted"] != 0 && ENCRYPT_PAYMENT_FIELDS){
+			if((int)$therecord["posted"] !=
+##### v0
+&& ENCRYPT_PAYMENT_FIELDS){
 
 				$querystatement = "
 					SELECT
@@ -414,11 +422,15 @@ if(class_exists("phpbmsTable")){
 			//check booleans
 			if(isset($variables["readytopost"]))
 				if($variables["readytopost"] && $variables["readytopost"] != 1)
-					$this->verifyErrors[] = "The `readytopost` field must be a boolean (equivalent to 0 or exactly 1).";
+					$this->verifyErrors[] = "The `readytopost` field must be a boolean (equivalent to
+##### v0
+or exactly 1).";
 
 			if(isset($variables["posted"]))
 				if($variables["posted"] && $variables["posted"] != 1)
-					$this->verifyErrors[] = "The `posted` field must be a boolean (equivalent to 0 or exactly 1).";
+					$this->verifyErrors[] = "The `posted` field must be a boolean (equivalent to
+##### v0
+or exactly 1).";
 
 			return parent::verifyVariables($variables);
 

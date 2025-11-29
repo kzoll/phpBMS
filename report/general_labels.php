@@ -3,7 +3,9 @@
  $Rev$ | $LastChangedBy$
  $LastChangedDate$
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -96,7 +98,9 @@ class pdfLabels extends phpbmsReport{
             $this->settings["labelHeight"] = 1;
 
         if(!isset($this->settings["labelWidth"]))
-            $this->settings["labelWidth"] = 2 + (5/8);
+            $this->settings["labelWidth"] =
+##### v2
++ (5/8);
 
         if(!isset($this->settings["startTop"]))
             $this->settings["startTop"] = 1/2;

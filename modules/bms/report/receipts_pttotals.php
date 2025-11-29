@@ -1,9 +1,15 @@
 <?php
 /*
- $Rev: 290 $ | $LastChangedBy: brieb $
- $LastChangedDate: 2007-08-27 18:15:00 -0600 (Mon, 27 Aug 2007) $
+ $Rev:
+##### v290
+$ | $LastChangedBy: brieb $
+ $LastChangedDate: 2007-08-27 18:15:00 -0600 (Mon,
+##### v27
+Aug 2007) $
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -145,7 +151,9 @@ class receiptsPTTotals extends phpbmsReport{
 								<td colspan="7">
 									<p class="name"><?php
 
-										if($therecord["pid"] > 0 )
+										if($therecord["pid"] >
+##### v0
+)
 											echo formatVariable($therecord["name"]);
 										else
 											echo "Other";

@@ -1,8 +1,14 @@
 /*
- $Rev: 204 $ | $LastChangedBy: brieb $
- $LastChangedDate: 2007-03-26 15:07:58 -0600 (Mon, 26 Mar 2007) $
+ $Rev:
+##### v204
+$ | $LastChangedBy: brieb $
+ $LastChangedDate: 2007-03-26 15:07:58 -0600 (Mon,
+##### v26
+Mar 2007) $
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -449,7 +455,9 @@ smartSearch = {
 
 		//loop through til we find something with an existing class name making sure we have
 		//some length to the result children
-		while(newItem >= 0 && newItem < sbResults.childNodes.length){
+		while(newItem >=
+##### v0
+&& newItem < sbResults.childNodes.length){
 
 			if(sbResults.childNodes[newItem].className){
 

@@ -179,7 +179,9 @@ ALTER TABLE `productcategories`
     ADD COLUMN `custom7` TINYINT(1) DEFAULT 0,
     ADD COLUMN `custom8` TINYINT(1) DEFAULT 0,
     ADD COLUMN `parentid` varchar(64) NOT NULL DEFAULT '' AFTER `name`,
-    ADD COLUMN `displayorder` INT(11) NOT NULL DEFAULT 0 AFTER `parentid`;
+    ADD COLUMN `displayorder` INT(11) NOT NULL DEFAULT
+##### v0
+AFTER `parentid`;
 --end productcategories ALTER--
 --products ALTER--
 ALTER TABLE `products` ENGINE=INNODB;
@@ -346,10 +348,18 @@ INSERT INTO `reports` (`uuid`, `name`, `type`, `tabledefid`, `displayorder`, `ro
 INSERT INTO `reports` (`uuid`, `name`, `type`, `tabledefid`, `displayorder`, `roleid`, `reportfile`, `description`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES ('rpt:e25bdb7a-93be-b1d6-a292-cdec89c0c9fc', 'Summary', 'report', 'tbld:c595dbe7-6c77-1e02-5e81-c2e215736e9c', '10', 'role:c9439c3c-499b-7bcc-ee14-fec5bfcf5fc2', 'modules/bms/report/aritems_summary.php', 'Items grouped and totaled by clients, with grand totals.', 1, NOW(), 1, NOW());
 INSERT INTO `reports` (`uuid`, `name`, `type`, `tabledefid`, `displayorder`, `roleid`, `reportfile`, `description`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES ('rpt:916f34d8-0997-162c-4350-d93c3d283241', 'Payment Type Totals', 'report', 'tbld:43678406-be25-909b-c715-7e2afc7db601', '10', 'role:c9439c3c-499b-7bcc-ee14-fec5bfcf5fc2', 'modules/bms/report/receipts_pttotals.php', 'Totals grouped by payment method.', 1, NOW(), 1, NOW());
 INSERT INTO `reports` (`uuid`, `name`, `type`, `tabledefid`, `displayorder`, `roleid`, `reportfile`, `description`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES ('rpt:4851c350-4343-4dc3-4b7b-74c287de011b', 'Incoming Cash Flow', 'report', 'tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', '55', 'role:8f5fb368-e7d9-5010-d8f6-b4a78adc0520', 'modules/bms/report/incoming_cashflow.php', 'This report shows total incoming monies for a time period from both posted sales orders AND posted receipts. It can be grouped by week, month, quarter and year.\r\n\r\nThis report runs is unaffected by selected records, search or sort parameters.  It requires input of its own start and end dates.', 1, NOW(), 1, NOW());
-INSERT INTO `reports` (`uuid`, `name`, `type`, `tabledefid`, `displayorder`, `roleid`, `reportfile`, `description`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES ('rpt:e3057c38-0f68-5d1d-a1b7-793183d951d2', 'Labels - Folder', 'PDF Report', 'tbld:6d290174-8b73-e199-fe6c-bcf3d4b61083', '50', NULL, 'report/general_labels.php', 'Avery 5160 or compatible (3x10) Instructor Folder labels. \r\n\r\n **MAKE SURE when printing the pdf file, to TURN OFF the option \"shrink oversized pages to paper size\".**', 1, NOW(), 1, NOW());
-INSERT INTO `reports` (`uuid`, `name`, `type`, `tabledefid`, `displayorder`, `roleid`, `reportfile`, `description`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES ('rpt:1019eae2-50d4-e097-c73c-3748c2bd7840', 'Labels - Mailing', 'PDF Report', 'tbld:6d290174-8b73-e199-fe6c-bcf3d4b61083', '50', NULL, 'report/general_labels.php', 'Avery 5160 or compatible (3x10) Instructor Folder labels. \r\n\r\n **MAKE SURE when printing the pdf file, to TURN OFF the option \"shrink oversized pages to paper size\".**', 1, NOW(), 1, NOW());
-INSERT INTO `reports` (`uuid`, `name`, `type`, `tabledefid`, `displayorder`, `roleid`, `reportfile`, `description`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES ('rpt:805fe2c4-a0d2-185a-5609-a444da07d61a', 'Labels - Shipping', 'PDF Report', 'tbld:6d290174-8b73-e199-fe6c-bcf3d4b61083', '50', NULL, 'report/general_labels.php', 'Avery 5160 or compatible (3x10) Instructor Folder labels. \r\n\r\n **MAKE SURE when printing the pdf file, to TURN OFF the option \"shrink oversized pages to paper size\".**', 1, NOW(), 1, NOW());
-INSERT INTO `reports` (`uuid`, `name`, `type`, `tabledefid`, `displayorder`, `roleid`, `reportfile`, `description`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES ('rpt:7d461e1a-1bf3-b484-6b58-bf99126ad95f', 'Labels - Shipping', 'PDF Report', 'tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', '60', 'role:de7e6679-8bb2-29ee-4883-2fcd756fb120', 'report/general_labels.php', 'Avery 5160 or compatible (3x10) Instructor Folder labels. \r\n\r\n **MAKE SURE when printing the pdf file, to TURN OFF the option \"shrink oversized pages to paper size\".**', 1, NOW(), 1, NOW());
+INSERT INTO `reports` (`uuid`, `name`, `type`, `tabledefid`, `displayorder`, `roleid`, `reportfile`, `description`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES ('rpt:e3057c38-0f68-5d1d-a1b7-793183d951d2', 'Labels - Folder', 'PDF Report', 'tbld:6d290174-8b73-e199-fe6c-bcf3d4b61083', '50', NULL, 'report/general_labels.php', 'Avery
+##### v5160
+or compatible (3x10) Instructor Folder labels. \r\n\r\n **MAKE SURE when printing the pdf file, to TURN OFF the option \"shrink oversized pages to paper size\".**', 1, NOW(), 1, NOW());
+INSERT INTO `reports` (`uuid`, `name`, `type`, `tabledefid`, `displayorder`, `roleid`, `reportfile`, `description`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES ('rpt:1019eae2-50d4-e097-c73c-3748c2bd7840', 'Labels - Mailing', 'PDF Report', 'tbld:6d290174-8b73-e199-fe6c-bcf3d4b61083', '50', NULL, 'report/general_labels.php', 'Avery
+##### v5160
+or compatible (3x10) Instructor Folder labels. \r\n\r\n **MAKE SURE when printing the pdf file, to TURN OFF the option \"shrink oversized pages to paper size\".**', 1, NOW(), 1, NOW());
+INSERT INTO `reports` (`uuid`, `name`, `type`, `tabledefid`, `displayorder`, `roleid`, `reportfile`, `description`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES ('rpt:805fe2c4-a0d2-185a-5609-a444da07d61a', 'Labels - Shipping', 'PDF Report', 'tbld:6d290174-8b73-e199-fe6c-bcf3d4b61083', '50', NULL, 'report/general_labels.php', 'Avery
+##### v5160
+or compatible (3x10) Instructor Folder labels. \r\n\r\n **MAKE SURE when printing the pdf file, to TURN OFF the option \"shrink oversized pages to paper size\".**', 1, NOW(), 1, NOW());
+INSERT INTO `reports` (`uuid`, `name`, `type`, `tabledefid`, `displayorder`, `roleid`, `reportfile`, `description`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES ('rpt:7d461e1a-1bf3-b484-6b58-bf99126ad95f', 'Labels - Shipping', 'PDF Report', 'tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', '60', 'role:de7e6679-8bb2-29ee-4883-2fcd756fb120', 'report/general_labels.php', 'Avery
+##### v5160
+or compatible (3x10) Instructor Folder labels. \r\n\r\n **MAKE SURE when printing the pdf file, to TURN OFF the option \"shrink oversized pages to paper size\".**', 1, NOW(), 1, NOW());
 INSERT INTO `reports` (`uuid`, `name`, `type`, `tabledefid`, `displayorder`, `roleid`, `reportfile`, `description`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES ('rpt:435d3c34-0ca3-5d40-3488-e5593869c20c', 'Totals - Lead Source', 'report', 'tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', '50', 'role:259ead9f-100b-55b5-508a-27e33a6216bf', 'modules/bms/report/lineitems_totals.php', 'Totals grouped by invoice lead source and product', 1, NOW(), 1, NOW());
 INSERT INTO `reports` (`uuid`, `name`, `type`, `tabledefid`, `displayorder`, `roleid`, `reportfile`, `description`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES ('rpt:157ec22d-14c2-64cc-486a-fedc9cfe7d39', 'Totals - Products', 'report', 'tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', '50', 'role:259ead9f-100b-55b5-508a-27e33a6216bf', 'modules/bms/report/lineitems_totals.php', 'Totals report grouped by product displaying line items', 1, NOW(), 1, NOW());
 INSERT INTO `reports` (`uuid`, `name`, `type`, `tabledefid`, `displayorder`, `roleid`, `reportfile`, `description`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES ('rpt:b2402d8d-10e3-30b2-2c92-e6da9bd0093c', 'Totals - Product Categories', 'report', 'tbld:31423480-a9b0-f0ff-749e-b3b5e18ca93c', '50', 'role:259ead9f-100b-55b5-508a-27e33a6216bf', 'modules/bms/report/lineitems_totals.php', 'Totals report grouped first by product category and then by product.', 1, NOW(), 1, NOW());
@@ -412,7 +422,9 @@ INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultva
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:7d461e1a-1bf3-b484-6b58-bf99126ad95f','labelHeight','2.625','real',1,'2.625','Width of a single label');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:7d461e1a-1bf3-b484-6b58-bf99126ad95f','labelMarginLeft','0.0625','real',1,'0.0625','Distance from left between the start of an individual to the text being put on it');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:7d461e1a-1bf3-b484-6b58-bf99126ad95f','labelMarginTop','0.125','real',1,'0.125','Distance from top between start of an individual to the text being put on it');
-INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:7d461e1a-1bf3-b484-6b58-bf99126ad95f','queryStatement','SELECT clients.company AS rowText1, if(shiptosameasbilling = 0 && shiptoname != \'\' && shiptoname IS NOT NULL, shiptoname, trim(concat(clients.firstname, \' \', clients.lastname))) AS rowText2, if(shiptosameasbilling = 0, shiptoaddress1, invoices.address1) AS rowText3, if(shiptosameasbilling = 0, shiptoaddress2, invoices.address2) AS rowText4, if(shiptosameasbilling = 0, concat(shiptocity, \', \',shiptostate,\' \',shiptopostalcode), concat(invoices.city,\', \',invoices.state,\' \',invoices.postalcode)) AS rowText5, if(shiptosameasbilling = 0, shiptocountry, invoices.country) AS rowText6 FROM invoices INNER JOIN clients ON invoices.clientid=clients.uuid','text',1,'SELECT \"no data in first row\" AS `rowText1`,  \"no data in second row\" AS `rowText2` FROM `reports`','SQL SELECT and FROM clauses defining the data to be retrieved.  Each line printed should be selected as a column in the format `rowText(X)`, where (X) is the line number it will be printed on');
+INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:7d461e1a-1bf3-b484-6b58-bf99126ad95f','queryStatement','SELECT clients.company AS rowText1, if(shiptosameasbilling =
+##### v0
+&& shiptoname != \'\' && shiptoname IS NOT NULL, shiptoname, trim(concat(clients.firstname, \' \', clients.lastname))) AS rowText2, if(shiptosameasbilling = 0, shiptoaddress1, invoices.address1) AS rowText3, if(shiptosameasbilling = 0, shiptoaddress2, invoices.address2) AS rowText4, if(shiptosameasbilling = 0, concat(shiptocity, \', \',shiptostate,\' \',shiptopostalcode), concat(invoices.city,\', \',invoices.state,\' \',invoices.postalcode)) AS rowText5, if(shiptosameasbilling = 0, shiptocountry, invoices.country) AS rowText6 FROM invoices INNER JOIN clients ON invoices.clientid=clients.uuid','text',1,'SELECT \"no data in first row\" AS `rowText1`,  \"no data in second row\" AS `rowText2` FROM `reports`','SQL SELECT and FROM clauses defining the data to be retrieved.  Each line printed should be selected as a column in the format `rowText(X)`, where (X) is the line number it will be printed on');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:7d461e1a-1bf3-b484-6b58-bf99126ad95f','rowText1Font','Arial,B,9','string',0,'Arial,B,9','Comma separated list of FPDF font parameters defining font settings for the label text.  You can change the font on subsequent lines by adding an additional setting rowText(x)Font where (x) is the line number the font change occurs.');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:7d461e1a-1bf3-b484-6b58-bf99126ad95f','rowText3Font','Arial,,8','string',0,'',NULL);
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:435d3c34-0ca3-5d40-3488-e5593869c20c','reportTitle','Totals Grouped by Invoice Lead Source and Product','string',0,'Report','Report Title');
@@ -482,40 +494,64 @@ INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultva
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:d97334ef-0139-f178-fe36-c38e151cc60e','column2','1','string',0,'',NULL);
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:d97334ef-0139-f178-fe36-c38e151cc60e','column3','5','string',0,'',NULL);
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:44b21461-6e67-c284-0ccf-36ab1af47c9b','reportTitle','Invoice','string',1,'Invoice','Title printed on reports');
-INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:44b21461-6e67-c284-0ccf-36ab1af47c9b','printLogo','1','bool',1,'1','Should the logo print (1 = yes, 0 = no)');
-INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:44b21461-6e67-c284-0ccf-36ab1af47c9b','printCompanyInfo','1','bool',1,'1','Should the top company information print (1 = yes, 0 = no)');
+INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:44b21461-6e67-c284-0ccf-36ab1af47c9b','printLogo','1','bool',1,'1','Should the logo print (1 = yes,
+##### v0
+= no)');
+INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:44b21461-6e67-c284-0ccf-36ab1af47c9b','printCompanyInfo','1','bool',1,'1','Should the top company information print (1 = yes,
+##### v0
+= no)');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:44b21461-6e67-c284-0ccf-36ab1af47c9b','leftTopBox','billto','string',1,'billto','Contents of Right Top Header Box (can be `billto`, `shipto`, `invoiceinfo`, `companyinfo`, `nowshow` or `blank`)');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:44b21461-6e67-c284-0ccf-36ab1af47c9b','leftTopBoxTitle','SOLD TO','string',1,'SOLD TO','Title of Left Top Header Box');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:44b21461-6e67-c284-0ccf-36ab1af47c9b','rightTopBox','shipto','string',1,'shipto','Contents of Right Top Header Box (can be `billto`, `shipto`, `invoiceinfo`, `companyinfo`, `nowshow` or `blank`)');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:44b21461-6e67-c284-0ccf-36ab1af47c9b','rightTopBoxTitle','SHIP TO','string',1,'SHIP TO','Title of Right Top Header Box');
-INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:44b21461-6e67-c284-0ccf-36ab1af47c9b','templateFormatting','0','bool',1,'0','Should PDF remove lines and dark titles (1 = remove, 0 = keep)');
+INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:44b21461-6e67-c284-0ccf-36ab1af47c9b','templateFormatting','0','bool',1,'0','Should PDF remove lines and dark titles (1 = remove,
+##### v0
+= keep)');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:44b21461-6e67-c284-0ccf-36ab1af47c9b','templateUUID','','string',0,'','Optional UUID of file record for PDF to be used as background template');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:6bdef1ac-2f74-4d20-411a-3e48531dae73','reportTitle','Packing List','string',1,'Packing List','Title printed on reports');
-INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:6bdef1ac-2f74-4d20-411a-3e48531dae73','printLogo','1','bool',1,'1','Should the logo print (1 = yes, 0 = no)');
-INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:6bdef1ac-2f74-4d20-411a-3e48531dae73','printCompanyInfo','1','bool',1,'1','Should the top company information print (1 = yes, 0 = no)');
+INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:6bdef1ac-2f74-4d20-411a-3e48531dae73','printLogo','1','bool',1,'1','Should the logo print (1 = yes,
+##### v0
+= no)');
+INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:6bdef1ac-2f74-4d20-411a-3e48531dae73','printCompanyInfo','1','bool',1,'1','Should the top company information print (1 = yes,
+##### v0
+= no)');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:6bdef1ac-2f74-4d20-411a-3e48531dae73','leftTopBox','billto','string',1,'billto','Contents of Right Top Header Box (can be `billto`, `shipto`, `invoiceinfo`, `companyinfo`, `nowshow` or `blank`)');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:6bdef1ac-2f74-4d20-411a-3e48531dae73','leftTopBoxTitle','SOLD TO','string',1,'SOLD TO','Title of Left Top Header Box');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:6bdef1ac-2f74-4d20-411a-3e48531dae73','rightTopBox','shipto','string',1,'shipto','Contents of Right Top Header Box (can be `billto`, `shipto`, `invoiceinfo`, `companyinfo`, `nowshow` or `blank`)');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:6bdef1ac-2f74-4d20-411a-3e48531dae73','rightTopBoxTitle','SHIP TO','string',1,'SHIP TO','Title of Right Top Header Box');
-INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:6bdef1ac-2f74-4d20-411a-3e48531dae73','templateFormatting','0','bool',1,'0','Should PDF remove lines and dark titles (1 = remove, 0 = keep)');
+INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:6bdef1ac-2f74-4d20-411a-3e48531dae73','templateFormatting','0','bool',1,'0','Should PDF remove lines and dark titles (1 = remove,
+##### v0
+= keep)');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:6bdef1ac-2f74-4d20-411a-3e48531dae73','templateUUID','','string',0,'','Optional UUID of file record for PDF to be used as background template');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:b683e2f0-e52b-4dd4-33e1-7566616893ca','reportTitle','Quote','string',1,'Quote','Title printed on reports');
-INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:b683e2f0-e52b-4dd4-33e1-7566616893ca','printLogo','1','bool',1,'1','Should the logo print (1 = yes, 0 = no)');
-INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:b683e2f0-e52b-4dd4-33e1-7566616893ca','printCompanyInfo','1','bool',1,'1','Should the top company information print (1 = yes, 0 = no)');
+INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:b683e2f0-e52b-4dd4-33e1-7566616893ca','printLogo','1','bool',1,'1','Should the logo print (1 = yes,
+##### v0
+= no)');
+INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:b683e2f0-e52b-4dd4-33e1-7566616893ca','printCompanyInfo','1','bool',1,'1','Should the top company information print (1 = yes,
+##### v0
+= no)');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:b683e2f0-e52b-4dd4-33e1-7566616893ca','leftTopBox','billto','string',1,'billto','Contents of Right Top Header Box (can be `billto`, `shipto`, `invoiceinfo`, `companyinfo`, `nowshow` or `blank`)');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:b683e2f0-e52b-4dd4-33e1-7566616893ca','leftTopBoxTitle','SOLD TO','string',1,'SOLD TO','Title of Left Top Header Box');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:b683e2f0-e52b-4dd4-33e1-7566616893ca','rightTopBox','shipto','string',1,'shipto','Contents of Right Top Header Box (can be `billto`, `shipto`, `invoiceinfo`, `companyinfo`, `nowshow` or `blank`)');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:b683e2f0-e52b-4dd4-33e1-7566616893ca','rightTopBoxTitle','SHIP TO','string',1,'SHIP TO','Title of Right Top Header Box');
-INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:b683e2f0-e52b-4dd4-33e1-7566616893ca','templateFormatting','0','bool',1,'0','Should PDF remove lines and dark titles (1 = remove, 0 = keep)');
+INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:b683e2f0-e52b-4dd4-33e1-7566616893ca','templateFormatting','0','bool',1,'0','Should PDF remove lines and dark titles (1 = remove,
+##### v0
+= keep)');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:b683e2f0-e52b-4dd4-33e1-7566616893ca','templateUUID','','string',0,'','Optional UUID of file record for PDF to be used as background template');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:30a56a65-8673-b3c0-cd50-6546968b4d37','reportTitle','Work Order','string',1,'Work Order','Title printed on reports');
-INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:30a56a65-8673-b3c0-cd50-6546968b4d37','printLogo','1','bool',1,'1','Should the logo print (1 = yes, 0 = no)');
-INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:30a56a65-8673-b3c0-cd50-6546968b4d37','printCompanyInfo','1','bool',1,'1','Should the top company information print (1 = yes, 0 = no)');
+INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:30a56a65-8673-b3c0-cd50-6546968b4d37','printLogo','1','bool',1,'1','Should the logo print (1 = yes,
+##### v0
+= no)');
+INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:30a56a65-8673-b3c0-cd50-6546968b4d37','printCompanyInfo','1','bool',1,'1','Should the top company information print (1 = yes,
+##### v0
+= no)');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:30a56a65-8673-b3c0-cd50-6546968b4d37','leftTopBox','billto','string',1,'billto','Contents of Right Top Header Box (can be `billto`, `shipto`, `invoiceinfo`, `companyinfo`, `nowshow` or `blank`)');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:30a56a65-8673-b3c0-cd50-6546968b4d37','leftTopBoxTitle','SOLD TO','string',1,'SOLD TO','Title of Left Top Header Box');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:30a56a65-8673-b3c0-cd50-6546968b4d37','rightTopBox','shipto','string',1,'shipto','Contents of Right Top Header Box (can be `billto`, `shipto`, `invoiceinfo`, `companyinfo`, `nowshow` or `blank`)');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:30a56a65-8673-b3c0-cd50-6546968b4d37','rightTopBoxTitle','SHIP TO','string',1,'SHIP TO','Title of Right Top Header Box');
-INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:30a56a65-8673-b3c0-cd50-6546968b4d37','templateFormatting','0','bool',1,'0','Should PDF remove lines and dark titles (1 = remove, 0 = keep)');
+INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:30a56a65-8673-b3c0-cd50-6546968b4d37','templateFormatting','0','bool',1,'0','Should PDF remove lines and dark titles (1 = remove,
+##### v0
+= keep)');
 INSERT INTO `reportsettings` (reportuuid, name, value, type, required, defaultvalue, description)  VALUES ('rpt:30a56a65-8673-b3c0-cd50-6546968b4d37','templateUUID','','string',0,'','Optional UUID of file record for PDF to be used as background template');
 --end reportsettings INSERT--
 --role UPDATE--
@@ -537,7 +573,9 @@ INSERT INTO `settings` (`name`, `value`) VALUES ('encryption_key_path', '');
 UPDATE `shippingmethods` SET `uuid`='shp:f34a3e10-e782-2675-f041-71f5c88f5aa9' WHERE `name`='FedEx Priority Overnight AM';
 UPDATE `shippingmethods` SET `uuid`='shp:e2e43816-667a-fdf3-6bec-4456bcf8bef0' WHERE `name`='FedEx Standard Overnight';
 UPDATE `shippingmethods` SET `uuid`='shp:0f07f7fd-0352-8df7-8294-a57e5e375808' WHERE `name`='UPS 2nd Day Air';
-UPDATE `shippingmethods` SET `uuid`='shp:6ef11711-7335-3e90-cf27-df5ea23c1480' WHERE `name`='UPS 3 Day Select';
+UPDATE `shippingmethods` SET `uuid`='shp:6ef11711-7335-3e90-cf27-df5ea23c1480' WHERE `name`='UPS
+##### v3
+Day Select';
 UPDATE `shippingmethods` SET `uuid`='shp:1a0c53bd-6754-7d9f-4bea-bad57628187a' WHERE `name`='UPS Ground (Com)';
 UPDATE `shippingmethods` SET `uuid`='shp:9e0bad1f-0545-6b09-3900-4e5943629037' WHERE `name`='UPS Ground (Res)';
 UPDATE `shippingmethods` SET `uuid`='shp:ba131229-fb3d-d328-91c8-323480831b03' WHERE `name`='UPS Next Day Air';
@@ -731,13 +769,21 @@ WHERE
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:455b8839-162b-3fcb-64b6-eeb946f873e1', 'Active Records', 'discounts.inactive=0', '0', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:97760a4f-1c1a-a108-d05f-5fc4ec59583c', 'All Records', 'postingsessions.id!=-1', '2', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:97760a4f-1c1a-a108-d05f-5fc4ec59583c', 'This Month\'s Sessions', 'YEAR(postingsessions.sessiondate) = YEAR(NOW()) AND MONTH(postingsessions.sessiondate) = MONTH(NOW())', '0', '');
-INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:97760a4f-1c1a-a108-d05f-5fc4ec59583c', 'Last Month\'s Sessions', 'YEAR(postingsessions.sessiondate) = YEAR(DATE_SUB(NOW(),INTERVAL 1 MONTH)) AND MONTH(postingsessions.sessiondate) = MONTH(DATE_SUB(NOW(),INTERVAL 1 MONTH))', '1', '');
+INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:97760a4f-1c1a-a108-d05f-5fc4ec59583c', 'Last Month\'s Sessions', 'YEAR(postingsessions.sessiondate) = YEAR(DATE_SUB(NOW(),INTERVAL
+##### v1
+MONTH)) AND MONTH(postingsessions.sessiondate) = MONTH(DATE_SUB(NOW(),INTERVAL
+##### v1
+MONTH))', '1', '');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'Orders - Credit Memo', '`invoices`.`iscreditmemo` != \'0\' AND `invoices`.`type` = \'Order\'', '6', 'role:de7e6679-8bb2-29ee-4883-2fcd756fb120');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'Invoices - Credit Memo', '`invoices`.`iscreditmemo` != \'0\' AND `invoices`.`type` = \'Invoice\' ', '14', 'role:de7e6679-8bb2-29ee-4883-2fcd756fb120');
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES ('tbld:62fe599d-c18f-3674-9e54-b62c2d6b1883', 'All Credit Memos', '`invoices`.`iscreditmemo` != \'0\'', '17', 'role:259ead9f-100b-55b5-508a-27e33a6216bf');
 --end tablefindoptions INSERT--
 --tablefindoptions UPDATE--
-UPDATE `tablefindoptions` SET `displayorder` = 0 WHERE `tabledefid` = 25 AND `name` = 'all records';
+UPDATE `tablefindoptions` SET `displayorder` =
+##### v0
+WHERE `tabledefid` =
+##### v25
+AND `name` = 'all records';
 UPDATE `tablefindoptions` SET `search`= 'clients.firstname=dclients.firstname AND clients.lastname=dclients.lastname AND addresses.postalcode = daddresses.postalcode AND clients.lastname != \'\' AND clients.firstname != \'\' AND addresses.postalcode != \'\' AND clients.id<>dclients.ID' WHERE `name` = 'match names and postal code' AND `tabledefid` = '18';
 UPDATE `tablefindoptions` SET `search`= 'addresses.address1=daddresses.address1 AND clients.id<>dclients.id' WHERE `name` = 'match addresses' AND `tabledefid` = '18';
 UPDATE `tablefindoptions` SET `displayorder` = '1' WHERE `tabledefid` = '2' AND `name` = 'Orders';
@@ -789,8 +835,16 @@ INSERT INTO `tableoptions` (`tabledefid`, `name`, `option`, `needselect`, `other
 INSERT INTO `tableoptions` (`tabledefid`, `name`, `option`, `needselect`, `othercommand`, `roleid`, `displayorder`) VALUES ('tbld:97760a4f-1c1a-a108-d05f-5fc4ec59583c', 'import', '0', '0', '0', 'Admin', '0');
 --end tableoptions INSERT--
 --tableoptions UPDATE--
-UPDATE `tableoptions` SET `needselect` = 0 WHERE `tabledefid` = 2 AND `name` = 'massEmail';
-UPDATE `tableoptions` SET `needselect` = 0 WHERE `tabledefid` = 303 AND `name` = 'run_aging';
+UPDATE `tableoptions` SET `needselect` =
+##### v0
+WHERE `tabledefid` =
+##### v2
+AND `name` = 'massEmail';
+UPDATE `tableoptions` SET `needselect` =
+##### v0
+WHERE `tabledefid` =
+##### v303
+AND `name` = 'run_aging';
 --end tableoptions UPDATE--
 --tablesearchablefields ALTER--
 INSERT INTO `tablesearchablefields` (`tabledefid`, `field`, `name`, `displayorder`, `type`) VALUES ('tbld:97760a4f-1c1a-a108-d05f-5fc4ec59583c', 'postingsessions.id', 'id', '2', 'field');

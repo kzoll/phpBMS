@@ -99,7 +99,9 @@ class Swift_Mime_Headers_DateHeader extends Swift_Mime_Headers_AbstractHeader
   
   /**
    * Get the string value of the body in this Header.
-   * This is not necessarily RFC 2822 compliant since folding white space will
+   * This is not necessarily RFC
+##### v2822
+compliant since folding white space will
    * not be added at this stage (see {@link toString()} for that).
    * @return string
    * @see toString()

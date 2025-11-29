@@ -3,7 +3,9 @@
  $Rev$ | $LastChangedBy$
  $LastChangedDate$
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -108,8 +110,12 @@
 
 	<p class="small">
 		<strong>Kreotek, LLC</strong><br />
-		610 Quantum Rd. NE<br />
-		Rio Rancho, NM 87124 USA
+	
+##### v610
+Quantum Rd. NE<br />
+		Rio Rancho, NM
+##### v87124
+USA
 	</p>
 
 

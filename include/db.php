@@ -1,9 +1,15 @@
 <?php
 /*
- $Rev: 249 $ | $LastChangedBy: brieb $
- $LastChangedDate: 2007-07-02 15:50:36 -0600 (Mon, 02 Jul 2007) $
+ $Rev:
+##### v249
+$ | $LastChangedBy: brieb $
+ $LastChangedDate: 2007-07-02 15:50:36 -0600 (Mon,
+##### v02
+Jul 2007) $
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -128,7 +134,9 @@ class db{
      *
      * Establishes a connection to the database.  If the {@link $pconnect} setting
      * is set, it uses the mysql_pconnect (for persistennt connections). We pass
-     * connection flags of 65536 so that calling simple stored procedures will
+     * connection flags of
+##### v65536
+so that calling simple stored procedures will
      * successfully return results
      */
     function connect(){
@@ -556,7 +564,9 @@ class db{
 	    if(!$inParents){
 
 		$skipline = false;
-		if(trim($line) == "" || strpos($line, "#") === 0 || strpos($line, "--") === 0)
+		if(trim($line) == "" || strpos($line, "#") ===
+##### v0
+|| strpos($line, "--") === 0)
 		    $skipline = true;
 
 		if($skipline){

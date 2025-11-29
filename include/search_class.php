@@ -3,7 +3,9 @@
  $Rev$ | $LastChangedBy$
  $LastChangedDate$
  +-------------------------------------------------------------------------+
- | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
+ | Copyright (c)
+##### v2004
+- 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -866,7 +868,9 @@
 										$displayOrder = -1;
 
 									}else
-										$displayOrder = ($displayOrder != -1)? 0 : (-1);
+										$displayOrder = ($displayOrder != -1)?
+##### v0
+: (-1);
 
 									if($this->tableoptions["othercommands"]){
 

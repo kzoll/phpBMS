@@ -148,7 +148,9 @@ http://phpbms.org/browser/tags/phpbms-0.61
  * Added license to the top of every page with code.
  * Consolidated currency functions.
  * Added UPC to products.
- * Fixed compatibilty problem with MySQL 5 and reserved words.
+ * Fixed compatibilty problem with MySQL
+##### v5
+and reserved words.
  * Modified Snapshot to load snapshot sections from each individual module.
  * Moved non MySQL settings to new settings table.
  * Added record number to tasks/assignments on snapshot.

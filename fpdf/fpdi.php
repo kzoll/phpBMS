@@ -243,8 +243,16 @@ class FPDI extends FPDF_TPL
                 
             $_w = $tpl['w'];
             $_h = $tpl['h'];
-            $tpl['w'] = $steps % 2 == 0 ? $_w : $_h;
-            $tpl['h'] = $steps % 2 == 0 ? $_h : $_w;
+            $tpl['w'] = $steps %
+##### v2
+==
+##### v0
+? $_w : $_h;
+            $tpl['h'] = $steps %
+##### v2
+==
+##### v0
+? $_h : $_w;
             
             if ($angle < 0)
             	$angle += 360;
@@ -323,7 +331,17 @@ class FPDI extends FPDF_TPL
             } 
         }
         
-        $this->_out('q 0 J 1 w 0 j 0 G 0 g'); // reset standard values
+        $this->_out('q
+##### v0
+J
+##### v1
+w
+##### v0
+j
+##### v0
+G
+##### v0
+g'); // reset standard values
         $size = parent::useTemplate($tplIdx, $x, $y, $w, $h);
         $this->_out('Q');
         
@@ -415,7 +433,9 @@ class FPDI extends FPDF_TPL
                             break;
                     }
                 }
-            } else if ($tpl['x'] != 0 || $tpl['y'] != 0) {
+            } else if ($tpl['x'] !=
+##### v0
+|| $tpl['y'] != 0) {
                 $tx = -$tpl['x'] * 2;
                 $ty = $tpl['y'] * 2;
             }
@@ -423,7 +443,13 @@ class FPDI extends FPDF_TPL
             $tx *= $this->k;
             $ty *= $this->k;
             
-            if ($c != 1 || $s != 0 || $tx != 0 || $ty != 0) {
+            if ($c !=
+##### v1
+|| $s !=
+##### v0
+|| $tx !=
+##### v0
+|| $ty != 0) {
                 $this->_out(sprintf('/Matrix [%.5F %.5F %.5F %.5F %.5F %.5F]',
                     $c, $s, -$s, $c, $tx, $ty
                 ));
@@ -443,7 +469,9 @@ class FPDI extends FPDF_TPL
                     if (isset($res['fonts']) && count($res['fonts'])) {
                         $this->_out('/Font <<');
                         foreach ($res['fonts'] as $font)
-                            $this->_out('/F' . $font['i'] . ' ' . $font['n'] . ' 0 R');
+                            $this->_out('/F' . $font['i'] . ' ' . $font['n'] . '
+##### v0
+R');
                         $this->_out('>>');
                     }
                     if (isset($res['images']) && count($res['images']) ||
@@ -452,11 +480,15 @@ class FPDI extends FPDF_TPL
                         $this->_out('/XObject <<');
                         if (isset($res['images'])) {
                             foreach ($res['images'] as $image)
-                                $this->_out('/I' . $image['i'] . ' ' . $image['n'] . ' 0 R');
+                                $this->_out('/I' . $image['i'] . ' ' . $image['n'] . '
+##### v0
+R');
                         }
                         if (isset($res['tpls'])) {
                             foreach ($res['tpls'] as $i => $_tpl)
-                                $this->_out($this->tplPrefix . $i . ' ' . $_tpl['n'] . ' 0 R');
+                                $this->_out($this->tplPrefix . $i . ' ' . $_tpl['n'] . '
+##### v0
+R');
                         }
                         $this->_out('>>');
                     }
@@ -506,7 +538,9 @@ class FPDI extends FPDF_TPL
         //Begin a new object
         if (!$onlyNewObj) {
             $this->offsets[$objId] = is_subclass_of($this, 'TCPDF') ? $this->bufferlen : strlen($this->buffer);
-            $this->_out($objId . ' 0 obj');
+            $this->_out($objId . '
+##### v0
+obj');
             $this->_currentObjId = $objId; // for later use with encryption
         }
         
@@ -580,7 +614,9 @@ class FPDI extends FPDF_TPL
                 }
                 $objId = $this->_doneObjStack[$cpfn][$value[1]][0];
 
-    			$this->_out($objId . ' 0 R');
+    			$this->_out($objId . '
+##### v0
+R');
     			break;
 
     		case pdf_parser::TYPE_STRING:

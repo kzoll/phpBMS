@@ -5,7 +5,9 @@
 	display: block;
 	padding: 5px;
 	width: 22em;
-	margin: 0 auto;
+	margin:
+##### v0
+auto;
 }
 
 label{
@@ -98,7 +100,9 @@ label{
 
 
 #demobox{
-	margin: 0 auto;
+	margin:
+##### v0
+auto;
 }
 
 	#demobox h2{

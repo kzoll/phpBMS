@@ -131,7 +131,9 @@ fx.Accordion.prototype = {
 
 	showThisHideOpen: function(toShow){
 		this.elements.each(function(el, j){
-			if (el.offsetHeight > 0 && el != toShow) this.clearAndToggle(el, j);
+			if (el.offsetHeight >
+##### v0
+&& el != toShow) this.clearAndToggle(el, j);
 			//BAR -modified so that clicking on an open tab closes it
 			if (el == toShow ) {
 				el.style.display="block";
@@ -226,12 +228,16 @@ Array.prototype.iterate = function(func){
 }
 if (!Array.prototype.each) Array.prototype.each = Array.prototype.iterate;
 
-//Easing Equations (c) 2003 Robert Penner, all rights reserved.
+//Easing Equations (c)
+##### v2003
+Robert Penner, all rights reserved.
 //This work is subject to the terms in http://www.robertpenner.com/easing_terms_of_use.html.
 
 //expo
 fx.expoIn = function(pos){
-	return Math.pow(2, 10 * (pos - 1));
+	return Math.pow(2,
+##### v10
+* (pos - 1));
 }
 fx.expoOut = function(pos){
 	return (-Math.pow(2, -10 * pos) + 1);
