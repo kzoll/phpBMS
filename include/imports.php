@@ -186,9 +186,7 @@
 					(
 						`id` = ".((int)$tempFileID)."
 						OR
-						`creationdate` <= NOW() - INTERVAL
-##### v30
-MINUTE
+						`creationdate` <= NOW() - INTERVAL 30 MINUTE
 					);
 				";
 
@@ -233,9 +231,7 @@ MINUTE
 					//count total fieldnames (top row of csv document)
 					$fieldNum = count($titles);
 
-					//the file starts at line number 1, but since line
-##### v1
-is
+					//the file starts at line number 1, but since line 1 is
 					//supposed to be the fieldnames in the table(s), the lines
 					//being insereted start @ 2.
 					$rowNum = 2;

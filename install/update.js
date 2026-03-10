@@ -149,18 +149,14 @@ stepsNav = {
 
 	navNext: function(){
 
-		if(stepsNav.currentSection +
-##### v1
-<= stepsNav.sections.length){
+		if(stepsNav.currentSection + 1 <= stepsNav.sections.length){
 			stepsNav.navTo(stepsNav.currentSection + 1);
 		}
 	},
 
 
 	navPrev: function(){
-		if(stepsNav.currentSection -
-##### v1
-> 0)
+		if(stepsNav.currentSection - 1 > 0)
 			stepsNav.navTo(stepsNav.currentSection - 1);
 	},
 

@@ -59,9 +59,7 @@ METHOD:PUBLISH
 							repeating, repeatevery, repeattype, repeateachlist, repeatontheday, repeatontheweek, repeattimes, 
 							repeatuntil
 							FROM notes
-							WHERE (notes.private =
-##### v0
-OR notes.createdby=".$this->userinfo["id"].") AND notes.type='EV' AND
+							WHERE (notes.private = 0 OR notes.createdby=".$this->userinfo["id"].") AND notes.type='EV' AND
 							(startdate <= '".datetoString($startdate,"SQL")."'";
 		if($enddate)
 			$querystatement .= " AND enddate >= '".datetoString($startdate,"SQL")."'";
@@ -112,9 +110,7 @@ DTEND:<?php
 				$bydayArray = explode("::",$event["repeateachlist"]);
 				foreach($bydayArray as $day){
 					$tempday = ($day != 7)?($day+1):(1);
-					$rrule .= strtoupper(substr(nl_langinfo(constant("ABDAY_".$tempday)),
-##### v0
-,2)).", ";
+					$rrule .= strtoupper(substr(nl_langinfo(constant("ABDAY_".$tempday)), 0 ,2)).", ";
 				}
 				
 				$rrule = substr($rrule,0,(strlen($rrule)-2) ).";";
@@ -135,9 +131,7 @@ DTEND:<?php
 
 					$tempday = ($event["repeatontheday"] != 7)?($event["repeatontheday"]+1):(1);
 
-					$rrule .= "BYDAY=".$event["repeatontheweek"].strtoupper(substr(nl_langinfo(constant("ABDAY_".$tempday)),
-##### v0
-,2)).";";
+					$rrule .= "BYDAY=".$event["repeatontheweek"].strtoupper(substr(nl_langinfo(constant("ABDAY_".$tempday)), 0 ,2)).";";
 				}//end if
 				break;
 			
@@ -155,9 +149,7 @@ DTEND:<?php
 
 					$tempday = ($event["repeatontheday"] != 7)?($event["repeatontheday"]+1):(1);
 
-					$rrule .= "BYDAY=".$event["repeatontheweek"].strtoupper(substr(nl_langinfo(constant("ABDAY_".$tempday)),
-##### v0
-,2)).";";
+					$rrule .= "BYDAY=".$event["repeatontheweek"].strtoupper(substr(nl_langinfo(constant("ABDAY_".$tempday)), 0 ,2)).";";
 				}//endif
 				break;
 				

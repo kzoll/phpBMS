@@ -48,9 +48,7 @@ class Swift_Mime_ContentEncoder_PlainContentEncoder
    * Encode a given string to produce an encoded string.
    * @param string $string
    * @param int $firstLineOffset, ignored
-   * @param int $maxLineLength -
-##### v0
-means no wrapping will occur
+   * @param int $maxLineLength - 0 means no wrapping will occur
    * @return string
    */
   public function encodeString($string, $firstLineOffset = 0,
@@ -68,9 +66,7 @@ means no wrapping will occur
    * @param Swift_OutputByteStream $in
    * @param Swift_InputByteStream $out
    * @param int $firstLineOffset, ignored
-   * @param int $maxLineLength, optional,
-##### v0
-means no wrapping will occur
+   * @param int $maxLineLength, optional, 0 means no wrapping will occur
    */
   public function encodeByteStream(
     Swift_OutputByteStream $os, Swift_InputByteStream $is, $firstLineOffset = 0,

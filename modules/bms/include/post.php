@@ -1,15 +1,9 @@
 <?php
 /*
- $Rev:
-##### v311
-$ | $LastChangedBy: brieb $
- $LastChangedDate: 2007-10-02 19:51:27 -0600 (Tue,
-##### v02
-Oct 2007) $
+ $Rev: 311 $ | $LastChangedBy: brieb $
+ $LastChangedDate: 2007-10-02 19:51:27 -0600 (Tue, 02 Oct 2007) $
  +-------------------------------------------------------------------------+
- | Copyright (c)
-##### v2004
-- 2010, Kreotek LLC                                  |
+ | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -225,9 +219,7 @@ Oct 2007) $
                     postingsessions
                     (sessiondate, `source`, recordsposted, userid)
                 VALUES
-                    (NOW(), 'posting',
-##### v0
-,".$_SESSION["userinfo"]["id"].")";
+                    (NOW(), 'posting', 0 ,".$_SESSION["userinfo"]["id"].")";
 
             $this->db->query($insertstatement);
 

@@ -1,14 +1,8 @@
 /*
- $Rev:
-##### v316
-$ | $LastChangedBy: brieb $
- $LastChangedDate: 2007-10-09 13:58:11 -0600 (Tue,
-##### v09
-Oct 2007) $
+ $Rev: 316 $ | $LastChangedBy: brieb $
+ $LastChangedDate: 2007-10-09 13:58:11 -0600 (Tue, 09 Oct 2007) $
  +-------------------------------------------------------------------------+
- | Copyright (c)
-##### v2004
-- 2010, Kreotek LLC                                  |
+ | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |

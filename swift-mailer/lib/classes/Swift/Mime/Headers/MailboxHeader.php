@@ -98,9 +98,7 @@ class Swift_Mime_Headers_MailboxHeader extends Swift_Mime_Headers_AbstractHeader
   }
   
   /**
-   * Get the full mailbox list of this Header as an array of valid RFC
-##### v2822
-strings.
+   * Get the full mailbox list of this Header as an array of valid RFC 2822 strings.
    * Example:
    * <code>
    * <?php
@@ -110,12 +108,8 @@ strings.
    *  );
    * print_r($header->getNameAddressStrings());
    * // array (
-   * //
-##### v0
-=> Chris Corbyn <chris@swiftmailer.org>,
-   * //
-##### v1
-=> Mark Corbyn <mark@swiftmailer.org>
+   * // 0 => Chris Corbyn <chris@swiftmailer.org>,
+   * // 1 => Mark Corbyn <mark@swiftmailer.org>
    * // )
    * ?>
    * </code>
@@ -201,9 +195,7 @@ strings.
   
   /**
    * Get the string value of the body in this Header.
-   * This is not necessarily RFC
-##### v2822
-compliant since folding white space will
+   * This is not necessarily RFC 2822 compliant since folding white space will
    * not be added at this stage (see {@link toString()} for that).
    * @return string
    * @throws Swift_RfcComplianceException

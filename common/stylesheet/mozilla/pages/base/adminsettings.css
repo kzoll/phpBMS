@@ -1,9 +1,5 @@
-/* $Rev:
-##### v285
-$ | $LastChangedBy: brieb $ */
-/* $LastChangedDate: 2007-08-27 14:05:27 -0600 (Mon,
-##### v27
-Aug 2007) $ */
+/* $Rev: 285 $ | $LastChangedBy: brieb $ */
+/* $LastChangedDate: 2007-08-27 14:05:27 -0600 (Mon, 27 Aug 2007) $ */
 
 
 .moduleButtons{
@@ -28,9 +24,7 @@ Aug 2007) $ */
 
 .updateButtonP{
     text-align:right;
-    padding:
-##### v0
-10px 10px;
+    padding: 0 10px 10px;
 }
     .updateButtonP button{
         padding-right: 15px;
@@ -91,9 +85,7 @@ fieldset{
 
 #splashTitle{
     margin-right: 100px;
-    padding:3px
-##### v0
-0 5px;
+    padding:3px 0 0 5px;
 }
 
     #splashTitle h2{

@@ -17,9 +17,7 @@ INSERT INTO choices VALUES (116,'paymentmethod','');
 INSERT INTO choices VALUES (117,'shippingmethod','UPS Ground (Res)');
 INSERT INTO choices VALUES (118,'shippingmethod','UPS Next Day Air');
 INSERT INTO choices VALUES (119,'shippingmethod','UPS Ground (Com)');
-INSERT INTO choices VALUES (120,'shippingmethod','UPS
-##### v3
-Day Select');
+INSERT INTO choices VALUES (120,'shippingmethod','UPS 3 Day Select');
 INSERT INTO choices VALUES (121,'shippingmethod','FedEx Standard Overnight');
 INSERT INTO choices VALUES (122,'paymentmethod','American Express');
 INSERT INTO choices VALUES (123,'shippingmethod','UPS 2nd Day Air');

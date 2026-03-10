@@ -2,35 +2,13 @@ ALTER TABLE `clients` MODIFY COLUMN `state` varchar(20) default NULL;
 ALTER TABLE `clients` MODIFY COLUMN `shiptostate` varchar(20) default NULL;
 ALTER TABLE `invoices` MODIFY COLUMN `state` varchar(20) default NULL;
 UPDATE tablecolumns SET `column` = 'lineitems.unitprice', footerquery = 'sum(lineitems.unitprice)', format='currency' WHERE name="unit price" and tabledefid=5;
-DELETE FROM tablecolumns WHERE tabledefid=2 or tabledefid=3 or tabledefid =
-##### v4
-or tabledefid =
-##### v5
-OR tabledefid =
-##### v6
-OR tabledefid =
-##### v7
-OR tabledefid =
-##### v8
-OR tabledefid =
-##### v18
-OR tabledefid =
-##### v22
-OR tabledefid =
-##### v25
-OR tabledefid =
-##### v300
-OR tabledefid =
-##### v301
-OR tabledefid = 302;
+DELETE FROM tablecolumns WHERE tabledefid=2 or tabledefid=3 or tabledefid = 4 or tabledefid = 5 OR tabledefid = 6 OR tabledefid = 7 OR tabledefid = 8 OR tabledefid = 18 OR tabledefid = 22 OR tabledefid = 25 OR tabledefid = 300 OR tabledefid = 301 OR tabledefid = 302;
 UPDATE tabledefs SET querytable='(((invoices INNER JOIN clients ON invoices.clientid=clients.id) INNER JOIN invoicestatuses ON invoices.statusid=invoicestatuses.id) LEFT JOIN paymentmethods ON invoices.paymentmethodid = paymentmethods.id)', defaultwhereclause ='invoices.type+0<3 OR (invoices.type = \'Invoice\' AND invoices.totalti != invoices.amountpaid)' WHERE id =3;
 DELETE FROM tablefindoptions WHERE tabledefid=3;
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (3,'Orders - Ready To Post','invoices.type = \'Order\' AND invoices.readytopost =1',8,30);
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (3,'Orders - No Payment','invoices.type = \'Order\' AND invoices.paymentmethodid IS NULL or invoices.paymentmethodid = 0',9,20);
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (3,'Invoices - Today','invoices.type=\"Invoice\" and invoices.invoicedate=curdate()',11,20);
-INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (3,'Invoices - Yesterday','invoices.type=\"Invoice\" and invoices.invoicedate=date_sub(curdate(),INTERVAL
-##### v1
-DAY)',12,20);
+INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (3,'Invoices - Yesterday','invoices.type=\"Invoice\" and invoices.invoicedate=date_sub(curdate(),INTERVAL 1 DAY)',12,20);
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (3,'Invoices - This Month','invoices.type=\"Invoice\" and year(invoicedate)=year(curdate()) and month(invoicedate)=month(curdate())',15,30);
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (3,'Orders','invoices.type=\"Order\"',1,0);
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (3,'Orders/Invoices - Unpaid','invoices.type != \'Quote\' AND invoices.type != \'VOID\' AND invoices.amountpaid != invoices.totalti',7,20);
@@ -38,17 +16,9 @@ INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, 
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (3,'Quotes','invoices.type=\"Quote\"',17,20);
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (3,'Voided Records','invoices.type=\"VOID\"',18,0);
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (3,'All Records','invoices.id != 0',19,30);
-INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (3,'Invoices - Last Month','invoices.type=\"Invoice\" and year(invoicedate)=year(date_sub(curdate(),INTERVAL
-##### v1
-MONTH)) and month(invoicedate)=month(date_sub(curdate(),INTERVAL
-##### v1
-MONTH))',16,30);
+INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (3,'Invoices - Last Month','invoices.type=\"Invoice\" and year(invoicedate)=year(date_sub(curdate(),INTERVAL 1 MONTH)) and month(invoicedate)=month(date_sub(curdate(),INTERVAL 1 MONTH))',16,30);
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (3,'Invoices - This Week','invoices.type=\"Invoice\" and year(invoicedate)=year(curdate()) and week(invoicedate)=week(curdate())',13,30);
-INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (3,'Invoices - Last Week','invoices.type=\"Invoice\" and year(invoicedate)=year(date_sub(curdate(),INTERVAL
-##### v7
-DAY)) and week(invoicedate)=week(date_sub(curdate(),INTERVAL
-##### v7
-DAY))',14,30);
+INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (3,'Invoices - Last Week','invoices.type=\"Invoice\" and year(invoicedate)=year(date_sub(curdate(),INTERVAL 7 DAY)) and week(invoicedate)=week(date_sub(curdate(),INTERVAL 7 DAY))',14,30);
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (3,'Orders - Today','invoices.type=\"Order\" and invoices.orderdate=curdate()',6,0);
 INSERT INTO `tablecolumns` (`tabledefid`, `name`, `column`, `align`, `footerquery`, `displayorder`, `sortorder`, `wrap`, `size`, `format`, `roleid`) VALUES (2,'type','clients.type','left','',0,'',0,'',NULL,0);
 INSERT INTO `tablecolumns` (`tabledefid`, `name`, `column`, `align`, `footerquery`, `displayorder`, `sortorder`, `wrap`, `size`, `format`, `roleid`) VALUES (2,'name / company','if(clients.lastname!=\"\",concat(clients.lastname,\", \",clients.firstname,if(clients.company!=\"\",concat(\" (\",clients.company,\")\"),\"\")),clients.company)','left','',2,'',0,'100%',NULL,0);
@@ -134,27 +104,7 @@ INSERT INTO `menu` (`id`, `name`, `link`, `parentid`, `displayorder`, `createdby
 INSERT INTO `menu` (`id`, `name`, `link`, `parentid`, `displayorder`, `createdby`, `modifiedby`, `creationdate`, `modifieddate`, `roleid`) VALUES ('262', 'Email Projects', 'search.php?id=22', '200', '100', 1, 1, NOW(), NOW(), '-100');
 INSERT INTO `menu` (`id`, `name`, `link`, `parentid`, `displayorder`, `createdby`, `modifiedby`, `creationdate`, `modifieddate`, `roleid`) VALUES ('240', 'AR Items', 'search.php?id=303', '204', '20', 1, 1, NOW(), NOW(), '0');
 INSERT INTO `menu` (`id`, `name`, `link`, `parentid`, `displayorder`, `createdby`, `modifiedby`, `creationdate`, `modifieddate`, `roleid`) VALUES ('241', 'Receipts', 'search.php?id=304', '204', '30', 1, 1, NOW(), NOW(), '80');
-DELETE FROM `tablegroupings` WHERE tabledefid=2 or tabledefid=3 or tabledefid =
-##### v4
-or tabledefid =
-##### v5
-OR tabledefid =
-##### v6
-OR tabledefid =
-##### v7
-OR tabledefid =
-##### v8
-OR tabledefid =
-##### v18
-OR tabledefid =
-##### v22
-OR tabledefid =
-##### v25
-OR tabledefid =
-##### v300
-OR tabledefid =
-##### v301
-OR tabledefid = 302;
+DELETE FROM `tablegroupings` WHERE tabledefid=2 or tabledefid=3 or tabledefid = 4 or tabledefid = 5 OR tabledefid = 6 OR tabledefid = 7 OR tabledefid = 8 OR tabledefid = 18 OR tabledefid = 22 OR tabledefid = 25 OR tabledefid = 300 OR tabledefid = 301 OR tabledefid = 302;
 INSERT INTO `tablegroupings` (`tabledefid`, `field`, `displayorder`, `ascending`, `name`, `roleid`) VALUES (2,'clients.type',1,1,'',0);
 INSERT INTO `tablegroupings` (`tabledefid`, `field`, `displayorder`, `ascending`, `name`, `roleid`) VALUES (3,'concat(invoices.type,\"s\")',1,1,'',0);
 INSERT INTO `tablegroupings` (`tabledefid`, `field`, `displayorder`, `ascending`, `name`, `roleid`) VALUES (4,'productcategories.name',1,1,'',0);
@@ -217,12 +167,8 @@ INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, 
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (303,'closed items','aritems.status = \'closed\'',1,0);
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (303,'non-posted','aritems.posted = 0',2,0);
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (304,'ready to post','receipts.readytopost = 1',3,0);
-INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (304,'non-posted, open','receipts.posted =
-##### v0
-AND receipts.status = \'open\'',1,0);
-INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (304,'non-posted, collected','receipts.posted =
-##### v0
-AND receipts.status = \'collected\'',2,0);
+INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (304,'non-posted, open','receipts.posted = 0 AND receipts.status = \'open\'',1,0);
+INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (304,'non-posted, collected','receipts.posted = 0 AND receipts.status = \'collected\'',2,0);
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (304,'All Records','receipts.id!=-1',5,0);
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (304,'non-posted','receipts.posted = 0',0,0);
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (304,'posted','receipts.posted = 1',4,0);

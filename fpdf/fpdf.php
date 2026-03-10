@@ -908,9 +908,7 @@ function Image($file, $x=null, $y=null, $w=0, $h=0, $type='', $link='')
 	// Automatic width and height calculation if needed
 	if($w==0 && $h==0)
 	{
-		// Put image at
-##### v96
-dpi
+		// Put image at 96 dpi
 		$w = -96;
 		$h = -96;
 	}
@@ -939,9 +937,7 @@ dpi
 
 	if($x===null)
 		$x = $this->x;
-	$this->_out(sprintf('q %.2F
-##### v0
-0 %.2F %.2F %.2F cm /I%d Do Q',$w*$this->k,$h*$this->k,$x*$this->k,($this->h-($y+$h))*$this->k,$info['i']));
+	$this->_out(sprintf('q %.2F 0 0 %.2F %.2F %.2F cm /I%d Do Q',$w*$this->k,$h*$this->k,$x*$this->k,($this->h-($y+$h))*$this->k,$info['i']));
 	if($link)
 		$this->Link($x,$y,$w,$h,$link);
 }
@@ -1272,11 +1268,7 @@ function _parsepngstream($f, $file)
 	if(ord($this->_readstream($f,1))!=0)
 		$this->Error('Interlacing not supported: '.$file);
 	$this->_readstream($f,4);
-	$dp = '/Predictor
-##### v15
-/Colors '.($colspace=='DeviceRGB' ?
-##### v3
-: 1).' /BitsPerComponent '.$bpc.' /Columns '.$w;
+	$dp = '/Predictor 15 /Colors '.($colspace=='DeviceRGB' ? 3 : 1).' /BitsPerComponent '.$bpc.' /Columns '.$w;
 
 	// Scan chunks looking for palette, transparency and image data
 	$pal = '';
@@ -1438,9 +1430,7 @@ function _newobj()
 	// Begin a new object
 	$this->n++;
 	$this->offsets[$this->n] = strlen($this->buffer);
-	$this->_out($this->n.'
-##### v0
-obj');
+	$this->_out($this->n.' 0 obj');
 }
 
 function _putstream($s)
@@ -1484,16 +1474,10 @@ function _putpages()
 		// Page
 		$this->_newobj();
 		$this->_out('<</Type /Page');
-		$this->_out('/Parent
-##### v1
-0 R');
+		$this->_out('/Parent 1 0 R');
 		if(isset($this->PageSizes[$n]))
-			$this->_out(sprintf('/MediaBox [0
-##### v0
-%.2F %.2F]',$this->PageSizes[$n][0],$this->PageSizes[$n][1]));
-		$this->_out('/Resources
-##### v2
-0 R');
+			$this->_out(sprintf('/MediaBox [0 0 %.2F %.2F]',$this->PageSizes[$n][0],$this->PageSizes[$n][1]));
+		$this->_out('/Resources 2 0 R');
 		if(isset($this->PageLinks[$n]))
 		{
 			// Links
@@ -1501,29 +1485,21 @@ function _putpages()
 			foreach($this->PageLinks[$n] as $pl)
 			{
 				$rect = sprintf('%.2F %.2F %.2F %.2F',$pl[0],$pl[1],$pl[0]+$pl[2],$pl[1]-$pl[3]);
-				$annots .= '<</Type /Annot /Subtype /Link /Rect ['.$rect.'] /Border [0
-##### v0
-0] ';
+				$annots .= '<</Type /Annot /Subtype /Link /Rect ['.$rect.'] /Border [0 0 0] ';
 				if(is_string($pl[4]))
 					$annots .= '/A <</S /URI /URI '.$this->_textstring($pl[4]).'>>>>';
 				else
 				{
 					$l = $this->links[$pl[4]];
 					$h = isset($this->PageSizes[$l[0]]) ? $this->PageSizes[$l[0]][1] : $hPt;
-					$annots .= sprintf('/Dest [%d
-##### v0
-R /XYZ
-##### v0
-%.2F null]>>',1+2*$l[0],$h-$l[1]*$this->k);
+					$annots .= sprintf('/Dest [%d 0 R /XYZ 0 %.2F null]>>',1+2*$l[0],$h-$l[1]*$this->k);
 				}
 			}
 			$this->_out($annots.']');
 		}
 		if($this->PDFVersion>'1.3')
 			$this->_out('/Group <</Type /Group /S /Transparency /CS /DeviceRGB>>');
-		$this->_out('/Contents '.($this->n+1).'
-##### v0
-R>>');
+		$this->_out('/Contents '.($this->n+1).' 0 R>>');
 		$this->_out('endobj');
 		// Page content
 		$p = ($this->compress) ? gzcompress($this->pages[$n]) : $this->pages[$n];
@@ -1534,20 +1510,14 @@ R>>');
 	}
 	// Pages root
 	$this->offsets[1] = strlen($this->buffer);
-	$this->_out('1
-##### v0
-obj');
+	$this->_out('1 0 obj');
 	$this->_out('<</Type /Pages');
 	$kids = '/Kids [';
 	for($i=0;$i<$nb;$i++)
-		$kids .= (3+2*$i).'
-##### v0
-R ';
+		$kids .= (3+2*$i).' 0 R ';
 	$this->_out($kids.']');
 	$this->_out('/Count '.$nb);
-	$this->_out(sprintf('/MediaBox [0
-##### v0
-%.2F %.2F]',$wPt,$hPt));
+	$this->_out(sprintf('/MediaBox [0 0 %.2F %.2F]',$wPt,$hPt));
 	$this->_out('>>');
 	$this->_out('endobj');
 }
@@ -1608,19 +1578,11 @@ function _putfonts()
 			$this->_out('<</Type /Font');
 			$this->_out('/BaseFont /'.$name);
 			$this->_out('/Subtype /'.$type);
-			$this->_out('/FirstChar
-##### v32
-/LastChar 255');
-			$this->_out('/Widths '.($this->n+1).'
-##### v0
-R');
-			$this->_out('/FontDescriptor '.($this->n+2).'
-##### v0
-R');
+			$this->_out('/FirstChar 32 /LastChar 255');
+			$this->_out('/Widths '.($this->n+1).' 0 R');
+			$this->_out('/FontDescriptor '.($this->n+2).' 0 R');
 			if(isset($font['diffn']))
-				$this->_out('/Encoding '.($nf+$font['diffn']).'
-##### v0
-R');
+				$this->_out('/Encoding '.($nf+$font['diffn']).' 0 R');
 			else
 				$this->_out('/Encoding /WinAnsiEncoding');
 			$this->_out('>>');
@@ -1639,9 +1601,7 @@ R');
 			foreach($font['desc'] as $k=>$v)
 				$s .= ' /'.$k.' '.$v;
 			if(!empty($font['file']))
-				$s .= ' /FontFile'.($type=='Type1' ? '' : '2').' '.$this->FontFiles[$font['file']]['n'].'
-##### v0
-R';
+				$s .= ' /FontFile'.($type=='Type1' ? '' : '2').' '.$this->FontFiles[$font['file']]['n'].' 0 R';
 			$this->_out($s.'>>');
 			$this->_out('endobj');
 		}
@@ -1675,20 +1635,12 @@ function _putimage(&$info)
 	$this->_out('/Width '.$info['w']);
 	$this->_out('/Height '.$info['h']);
 	if($info['cs']=='Indexed')
-		$this->_out('/ColorSpace [/Indexed /DeviceRGB '.(strlen($info['pal'])/3-1).' '.($this->n+1).'
-##### v0
-R]');
+		$this->_out('/ColorSpace [/Indexed /DeviceRGB '.(strlen($info['pal'])/3-1).' '.($this->n+1).' 0 R]');
 	else
 	{
 		$this->_out('/ColorSpace /'.$info['cs']);
 		if($info['cs']=='DeviceCMYK')
-			$this->_out('/Decode [1
-##### v0
-1
-##### v0
-1
-##### v0
-1 0]');
+			$this->_out('/Decode [1 0 1 0 1 0 1 0]');
 	}
 	$this->_out('/BitsPerComponent '.$info['bpc']);
 	if(isset($info['f']))
@@ -1703,22 +1655,14 @@ R]');
 		$this->_out('/Mask ['.$trns.']');
 	}
 	if(isset($info['smask']))
-		$this->_out('/SMask '.($this->n+1).'
-##### v0
-R');
+		$this->_out('/SMask '.($this->n+1).' 0 R');
 	$this->_out('/Length '.strlen($info['data']).'>>');
 	$this->_putstream($info['data']);
 	$this->_out('endobj');
 	// Soft mask
 	if(isset($info['smask']))
 	{
-		$dp = '/Predictor
-##### v15
-/Colors
-##### v1
-/BitsPerComponent
-##### v8
-/Columns '.$info['w'];
+		$dp = '/Predictor 15 /Colors 1 /BitsPerComponent 8 /Columns '.$info['w'];
 		$smask = array('w'=>$info['w'], 'h'=>$info['h'], 'cs'=>'DeviceGray', 'bpc'=>8, 'f'=>$info['f'], 'dp'=>$dp, 'data'=>$info['smask']);
 		$this->_putimage($smask);
 	}
@@ -1737,9 +1681,7 @@ R');
 function _putxobjectdict()
 {
 	foreach($this->images as $image)
-		$this->_out('/I'.$image['i'].' '.$image['n'].'
-##### v0
-R');
+		$this->_out('/I'.$image['i'].' '.$image['n'].' 0 R');
 }
 
 function _putresourcedict()
@@ -1747,9 +1689,7 @@ function _putresourcedict()
 	$this->_out('/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]');
 	$this->_out('/Font <<');
 	foreach($this->fonts as $font)
-		$this->_out('/F'.$font['i'].' '.$font['n'].'
-##### v0
-R');
+		$this->_out('/F'.$font['i'].' '.$font['n'].' 0 R');
 	$this->_out('>>');
 	$this->_out('/XObject <<');
 	$this->_putxobjectdict();
@@ -1762,9 +1702,7 @@ function _putresources()
 	$this->_putimages();
 	// Resource dictionary
 	$this->offsets[2] = strlen($this->buffer);
-	$this->_out('2
-##### v0
-obj');
+	$this->_out('2 0 obj');
 	$this->_out('<<');
 	$this->_putresourcedict();
 	$this->_out('>>');
@@ -1790,25 +1728,15 @@ function _putinfo()
 function _putcatalog()
 {
 	$this->_out('/Type /Catalog');
-	$this->_out('/Pages
-##### v1
-0 R');
+	$this->_out('/Pages 1 0 R');
 	if($this->ZoomMode=='fullpage')
-		$this->_out('/OpenAction [3
-##### v0
-R /Fit]');
+		$this->_out('/OpenAction [3 0 R /Fit]');
 	elseif($this->ZoomMode=='fullwidth')
-		$this->_out('/OpenAction [3
-##### v0
-R /FitH null]');
+		$this->_out('/OpenAction [3 0 R /FitH null]');
 	elseif($this->ZoomMode=='real')
-		$this->_out('/OpenAction [3
-##### v0
-R /XYZ null null 1]');
+		$this->_out('/OpenAction [3 0 R /XYZ null null 1]');
 	elseif(!is_string($this->ZoomMode))
-		$this->_out('/OpenAction [3
-##### v0
-R /XYZ null null '.sprintf('%.2F',$this->ZoomMode/100).']');
+		$this->_out('/OpenAction [3 0 R /XYZ null null '.sprintf('%.2F',$this->ZoomMode/100).']');
 	if($this->LayoutMode=='single')
 		$this->_out('/PageLayout /SinglePage');
 	elseif($this->LayoutMode=='continuous')
@@ -1825,12 +1753,8 @@ function _putheader()
 function _puttrailer()
 {
 	$this->_out('/Size '.($this->n+1));
-	$this->_out('/Root '.$this->n.'
-##### v0
-R');
-	$this->_out('/Info '.($this->n-1).'
-##### v0
-R');
+	$this->_out('/Root '.$this->n.' 0 R');
+	$this->_out('/Info '.($this->n-1).' 0 R');
 }
 
 function _enddoc()
@@ -1854,13 +1778,9 @@ function _enddoc()
 	$o = strlen($this->buffer);
 	$this->_out('xref');
 	$this->_out('0 '.($this->n+1));
-	$this->_out('0000000000
-##### v65535
-f ');
+	$this->_out('0000000000 65535 f ');
 	for($i=1;$i<=$this->n;$i++)
-		$this->_out(sprintf('%010d
-##### v00000
-n ',$this->offsets[$i]));
+		$this->_out(sprintf('%010d 00000 n ',$this->offsets[$i]));
 	// Trailer
 	$this->_out('trailer');
 	$this->_out('<<');

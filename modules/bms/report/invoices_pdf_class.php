@@ -1,15 +1,9 @@
 <?php
 /*
- $Rev:
-##### v290
-$ | $LastChangedBy: brieb $
- $LastChangedDate: 2007-08-27 18:15:00 -0600 (Mon,
-##### v27
-Aug 2007) $
+ $Rev: 290 $ | $LastChangedBy: brieb $
+ $LastChangedDate: 2007-08-27 18:15:00 -0600 (Mon, 27 Aug 2007) $
  +-------------------------------------------------------------------------+
- | Copyright (c)
-##### v2004
-- 2010, Kreotek LLC                                  |
+ | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -1048,9 +1042,7 @@ class invoicePDF extends phpbmsReport{
             "defaultValue"=>1,
             "type"=>"bool",
             "required"=>1,
-            "description"=>"Should the logo print (1 = yes,
-##### v0
-= no)"
+            "description"=>"Should the logo print (1 = yes, 0 = no)"
         );
 
         $settings[] = array(
@@ -1058,9 +1050,7 @@ class invoicePDF extends phpbmsReport{
             "defaultValue"=>1,
             "type"=>"bool",
             "required"=>1,
-            "description"=>"Should the top company information print (1 = yes,
-##### v0
-= no)"
+            "description"=>"Should the top company information print (1 = yes, 0 = no)"
         );
 
         $settings[] = array(
@@ -1100,9 +1090,7 @@ class invoicePDF extends phpbmsReport{
             "defaultValue"=>"0",
             "type"=>"bool",
             "required"=>1,
-            "description"=>"Should PDF remove lines and dark titles (1 = remove,
-##### v0
-= keep)"
+            "description"=>"Should PDF remove lines and dark titles (1 = remove, 0 = keep)"
         );
 
         $settings[] = array(

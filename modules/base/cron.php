@@ -343,9 +343,7 @@
 			}
 		}
 
-		// prep some boundaries - these are not in GMT b/c gmt is a 24hour period, possibly bridging
-##### v2
-local days
+		// prep some boundaries - these are not in GMT b/c gmt is a 24hour period, possibly bridging 2 local days
 		$timeFromTs = 0;
 		$timeToTs = strtotime('+1 da');
 		$timeToTs++;

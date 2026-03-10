@@ -1,15 +1,9 @@
 <?php
 /*
- $Rev:
-##### v311
-$ | $LastChangedBy: brieb $
- $LastChangedDate: 2007-10-02 19:51:27 -0600 (Tue,
-##### v02
-Oct 2007) $
+ $Rev: 311 $ | $LastChangedBy: brieb $
+ $LastChangedDate: 2007-10-02 19:51:27 -0600 (Tue, 02 Oct 2007) $
  +-------------------------------------------------------------------------+
- | Copyright (c)
-##### v2004
-- 2010, Kreotek LLC                                  |
+ | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -122,9 +116,7 @@ Oct 2007) $
 				$querystatement.="
 					(assignedbyid = '".$this->useruuid."'
 					AND (completed = 0
-						OR (completed =
-##### v1
-AND completeddate >= CURDATE())
+						OR (completed = 1 AND completeddate >= CURDATE())
 					))";
 
 				$title = "Delegations";
@@ -136,15 +128,9 @@ AND completeddate >= CURDATE())
 
 		$querystatement.="AND (
 					(startdate IS NULL AND enddate IS NULL AND assignedtodate IS NULL)
-					OR (startdate IS NOT NULL AND startdate <= DATE_ADD(CURDATE(),INTERVAL
-##### v30
-DAY) AND enddate IS NULL AND assignedtodate IS NULL)
-					OR (enddate IS NOT NULL AND enddate <= DATE_ADD(CURDATE(),INTERVAL
-##### v30
-DAY))
-					OR (assignedtodate IS NOT NULL AND assignedtodate <= DATE_ADD(CURDATE(),INTERVAL
-##### v30
-DAY))
+					OR (startdate IS NOT NULL AND startdate <= DATE_ADD(CURDATE(),INTERVAL 30 DAY) AND enddate IS NULL AND assignedtodate IS NULL)
+					OR (enddate IS NOT NULL AND enddate <= DATE_ADD(CURDATE(),INTERVAL 30 DAY))
+					OR (assignedtodate IS NOT NULL AND assignedtodate <= DATE_ADD(CURDATE(),INTERVAL 30 DAY))
 				   )";
 
 		$querystatement.=" ORDER BY
@@ -222,9 +208,7 @@ DAY))
 
 					}//endswitch
 
-					// Looking for grouping changes in headers (3 days, 4-7 days, >
-##### v7
-days)
+					// Looking for grouping changes in headers (3 days, 4-7 days, > 7 days)
 					$xdate = stringToDate($therecord["xdate"],"SQL") ;
 
 					if($xdate > $section["date"]){

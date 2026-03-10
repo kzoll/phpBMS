@@ -171,9 +171,7 @@ class Swift_Mime_Headers_ParameterizedHeader
   // -- Private methods
   
   /**
-   * Render a RFC
-##### v2047
-compliant header parameter from the $name and $value.
+   * Render a RFC 2047 compliant header parameter from the $name and $value.
    * @param string $name
    * @param string $value
    * @return string

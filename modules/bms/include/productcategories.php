@@ -1,15 +1,9 @@
 <?php
 /*
- $Rev:
-##### v254
-$ | $LastChangedBy: brieb $
- $LastChangedDate: 2007-08-07 18:38:38 -0600 (Tue,
-##### v07
-Aug 2007) $
+ $Rev: 254 $ | $LastChangedBy: brieb $
+ $LastChangedDate: 2007-08-07 18:38:38 -0600 (Tue, 07 Aug 2007) $
  +-------------------------------------------------------------------------+
- | Copyright (c)
-##### v2004
-- 2010, Kreotek LLC                                  |
+ | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -77,9 +71,7 @@ if(class_exists("phpbmsTable")){
             //check booleans
             if(isset($variables["webenabled"]))
                 if($variables["webenabled"] && $variables["webenabled"] != 1)
-                    $this->verifyErrors[] = "The `webenabled` field must be a boolean (equivalent to
-##### v0
-or exactly 1).";
+                    $this->verifyErrors[] = "The `webenabled` field must be a boolean (equivalent to 0 or exactly 1).";
 
             if(isset($variables["parentid"])){
 
@@ -112,9 +104,7 @@ or exactly 1).";
                 WHERE
                     `uuid` != '".$uuid."'
                     AND (`parentid` = '' OR `parentid` != '".$uuid."')
-                    AND (`inactive` =
-##### v0
-OR `uuid` = '".$value."')";
+                    AND (`inactive` = 0 OR `uuid` = '".$value."')";
 
             $queryresult = $this->db->query($querystatement);
 

@@ -74,9 +74,7 @@ interface Swift_Mime_Message extends Swift_Mime_MimeEntity
    * 
    * If multiple addresses are present in the From field, this SHOULD be set.
    * 
-   * According to RFC
-##### v2822
-it is a requirement when there are multiple From
+   * According to RFC 2822 it is a requirement when there are multiple From
    * addresses, but Swift itself does not require it directly.
    * 
    * An associative array (with one element!) can be used to provide a display-

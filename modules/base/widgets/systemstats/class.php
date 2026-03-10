@@ -1,15 +1,9 @@
 <?php
 /*
- $Rev:
-##### v311
-$ | $LastChangedBy: brieb $
- $LastChangedDate: 2007-10-02 19:51:27 -0600 (Tue,
-##### v02
-Oct 2007) $
+ $Rev: 311 $ | $LastChangedBy: brieb $
+ $LastChangedDate: 2007-10-02 19:51:27 -0600 (Tue, 02 Oct 2007) $
  +-------------------------------------------------------------------------+
- | Copyright (c)
-##### v2004
-- 2010, Kreotek LLC                                  |
+ | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -57,11 +51,7 @@ Oct 2007) $
 	    //Grabbing Database Size
 	    $querystatement = "
 		SELECT
-		    SUM( data_length + index_length) /
-##### v1024
-/
-##### v1024
-AS sizedb
+		    SUM( data_length + index_length) / 1024 / 1024 AS sizedb
 		FROM
 		    information_schema.TABLES
 		WHERE

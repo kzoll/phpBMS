@@ -73,9 +73,7 @@ if (!class_exists('TCPDF', false)) {
         {
             $out = parent::_getxobjectdict();
             foreach ($this->_tpls as $tplIdx => $tpl) {
-                $out .= sprintf('%s%d %d
-##### v0
-R', $this->tplPrefix, $tplIdx, $tpl['n']);
+                $out .= sprintf('%s%d %d 0 R', $this->tplPrefix, $tplIdx, $tpl['n']);
             }
 
             return $out;

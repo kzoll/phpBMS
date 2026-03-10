@@ -1,15 +1,9 @@
 <?php
 /*
- $Rev:
-##### v155
-$ | $LastChangedBy: mipalmer $
- $LastChangedDate: 2006-10-22 15:09:20 -0600 (Sun,
-##### v22
-Oct 2006) $
+ $Rev: 155 $ | $LastChangedBy: mipalmer $
+ $LastChangedDate: 2006-10-22 15:09:20 -0600 (Sun, 22 Oct 2006) $
  +-------------------------------------------------------------------------+
- | Copyright (c)
-##### v2004
-- 2010, Kreotek LLC                                  |
+ | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |

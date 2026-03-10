@@ -11,9 +11,7 @@ SELECT, INPUT, TEXTAREA, .uneditable,button{
 	font-style:normal;
 }
 
-SELECT{padding:0
-##### v0
-0 3px;}
+SELECT{padding:0 0 0 3px;}
 
 TEXTAREA:Focus,SELECT:Focus,INPUT:Focus{background-color:white;border-color:black;}
 
@@ -87,9 +85,7 @@ FORM{margin:0px;padding:0px;}
 }
 
 .graphicButtons{
-	margin:0
-##### v0
-0 3px;
+	margin:0 0 0 3px;
 	border:0;
 	padding:0px;
 	cursor: pointer;
@@ -98,93 +94,35 @@ FORM{margin:0px;padding:0px;}
 }
 .graphicButtons span{display:none}
 
-.buttonInfo{background:url(image/button-info.png)
-##### v0
-0 no-repeat;}
-.buttonIcal{background:url(image/button-ical.png)
-##### v0
-0 no-repeat; width:27px;}
-.buttonRew{background:url(image/button-rew.png)
-##### v0
-0 no-repeat;}
-.buttonCheck{background:url(image/button-check.png)
-##### v0
-0 no-repeat;}
-.buttonFF{background:url(image/button-ff.png)
-##### v0
-0 no-repeat;}
-.buttonNew{background:url(image/button-new.png)
-##### v0
-0 no-repeat;}
-.buttonEmail{background:url(image/button-email.png)
-##### v0
-0 no-repeat;}
-.buttonEdit{background:url(image/button-edit.png)
-##### v0
-0 no-repeat;}
-.buttonEditDisabled{background:url(image/button-edit-disabled.png)
-##### v0
-0 no-repeat;}
-.buttonDate{background:url(image/button-date.png)
-##### v0
-0 no-repeat;}
-.buttonMoney{background:url(image/button-money.png)
-##### v0
-0 no-repeat;}
-.buttonMoneyDisabled{background:url(image/button-money-disabled.png)
-##### v0
-0 no-repeat;}
-.buttonPrint{background:url(image/button-print.png)
-##### v0
-0 no-repeat;}
-.buttonPrintDisabled{background:url(image/button-print-disabled.png)
-##### v0
-0 no-repeat;}
-.buttonTime{background:url(image/button-time.png)
-##### v0
-0 no-repeat;}
-.buttonDelete{background:url(image/button-delete.png)
-##### v0
-0 no-repeat;}
-.buttonDeleteDisabled{background:url(image/button-delete-disabled.png)
-##### v0
-0 no-repeat;}
-.buttonPlus{background:url(image/button-plus.png)
-##### v0
-0 no-repeat;}
-.buttonMinus{background:url(image/button-minus.png)
-##### v0
-0 no-repeat;}
-.buttonMinusDisabled{background:url(image/button-minus-disabled.png)
-##### v0
-0 no-repeat;}
-.buttonShip{background:url(image/button-ship.png)
-##### v0
-0 no-repeat;}
-.buttonShipDisabled{background:url(image/button-ship-disabled.png)
-##### v0
-0 no-repeat;}
-.buttonUp{background:url(image/button-up.png)
-##### v0
-0 no-repeat;}
-.buttonUpDisabled{background:url(image/button-up-disabled.png)
-##### v0
-0 no-repeat;}
-.buttonDown{background:url(image/button-down.png)
-##### v0
-0 no-repeat;}
-.buttonDownDisabled{background:url(image/button-down-disabled.png)
-##### v0
-0 no-repeat;}
-.buttonMap{background:url(image/button-map.png)
-##### v0
-0 no-repeat;}
-.buttonWWW{background:url(image/button-www.png)
-##### v0
-0 no-repeat;}
-.buttonX{background:url(image/button-x.png)
-##### v0
-0 no-repeat;}
+.buttonInfo{background:url(image/button-info.png) 0 0 no-repeat;}
+.buttonIcal{background:url(image/button-ical.png) 0 0 no-repeat; width:27px;}
+.buttonRew{background:url(image/button-rew.png) 0 0 no-repeat;}
+.buttonCheck{background:url(image/button-check.png) 0 0 no-repeat;}
+.buttonFF{background:url(image/button-ff.png) 0 0 no-repeat;}
+.buttonNew{background:url(image/button-new.png) 0 0 no-repeat;}
+.buttonEmail{background:url(image/button-email.png) 0 0 no-repeat;}
+.buttonEdit{background:url(image/button-edit.png) 0 0 no-repeat;}
+.buttonEditDisabled{background:url(image/button-edit-disabled.png) 0 0 no-repeat;}
+.buttonDate{background:url(image/button-date.png) 0 0 no-repeat;}
+.buttonMoney{background:url(image/button-money.png) 0 0 no-repeat;}
+.buttonMoneyDisabled{background:url(image/button-money-disabled.png) 0 0 no-repeat;}
+.buttonPrint{background:url(image/button-print.png) 0 0 no-repeat;}
+.buttonPrintDisabled{background:url(image/button-print-disabled.png) 0 0 no-repeat;}
+.buttonTime{background:url(image/button-time.png) 0 0 no-repeat;}
+.buttonDelete{background:url(image/button-delete.png) 0 0 no-repeat;}
+.buttonDeleteDisabled{background:url(image/button-delete-disabled.png) 0 0 no-repeat;}
+.buttonPlus{background:url(image/button-plus.png) 0 0 no-repeat;}
+.buttonMinus{background:url(image/button-minus.png) 0 0 no-repeat;}
+.buttonMinusDisabled{background:url(image/button-minus-disabled.png) 0 0 no-repeat;}
+.buttonShip{background:url(image/button-ship.png) 0 0 no-repeat;}
+.buttonShipDisabled{background:url(image/button-ship-disabled.png) 0 0 no-repeat;}
+.buttonUp{background:url(image/button-up.png) 0 0 no-repeat;}
+.buttonUpDisabled{background:url(image/button-up-disabled.png) 0 0 no-repeat;}
+.buttonDown{background:url(image/button-down.png) 0 0 no-repeat;}
+.buttonDownDisabled{background:url(image/button-down-disabled.png) 0 0 no-repeat;}
+.buttonMap{background:url(image/button-map.png) 0 0 no-repeat;}
+.buttonWWW{background:url(image/button-www.png) 0 0 no-repeat;}
+.buttonX{background:url(image/button-x.png) 0 0 no-repeat;}
 
 .buttonTimeStamp{
 	background:url(image/button-timestamp.png) no-repeat;
@@ -194,23 +132,15 @@ FORM{margin:0px;padding:0px;}
 	font-weight:bold;
 	width:auto;}
 
-.buttonDownload{background:url(image/button-download.png)
-##### v0
-0 no-repeat;}
+.buttonDownload{background:url(image/button-download.png) 0 0 no-repeat;}
 
 .buttonSpinner{
 	cursor:auto;
-	background:url("../../image/spinner.gif")
-##### v0
-0 no-repeat;
+	background:url("../../image/spinner.gif") 0 0 no-repeat;
 }
 
-.buttonShowSQLUp{width:35px;background:url(image/button-sql-up.png)
-##### v0
-0 no-repeat;}
-.buttonShowSQLDown{width:35px;background:url(image/button-sql-down.png)
-##### v0
-0 no-repeat;}
+.buttonShowSQLUp{width:35px;background:url(image/button-sql-up.png) 0 0 no-repeat;}
+.buttonShowSQLDown{width:35px;background:url(image/button-sql-down.png) 0 0 no-repeat;}
 
 .fieldCurrency{text-align:right;}
 

@@ -37,9 +37,7 @@ class Swift_Mime_ContentEncoder_QpContentEncoder extends Swift_Encoder_QpEncoder
 
   /**
    * Encode stream $in to stream $out.
-   * QP encoded strings have a maximum line length of
-##### v76
-characters.
+   * QP encoded strings have a maximum line length of 76 characters.
    * If the first line needs to be shorter, indicate the difference with
    * $firstLineOffset.
    * @param Swift_OutputByteStream $os output stream
@@ -51,9 +49,7 @@ characters.
     Swift_OutputByteStream $os, Swift_InputByteStream $is, $firstLineOffset = 0,
     $maxLineLength = 0)
   {
-    if ($maxLineLength >
-##### v76
-|| $maxLineLength <= 0)
+    if ($maxLineLength > 76 || $maxLineLength <= 0)
     {
       $maxLineLength = 76;
     }

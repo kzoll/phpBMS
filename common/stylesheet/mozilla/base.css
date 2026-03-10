@@ -114,13 +114,7 @@
 }
 
 .SBResults A{
-/*	width:245px;/*
-##### v295
--
-##### v5
--
-##### v30
-*/
+/*	width:245px;/* 295 - 5 - 30 */
 	display:block;
 	color:#663366;
 	font-weight:normal;

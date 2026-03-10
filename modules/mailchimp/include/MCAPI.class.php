@@ -11,9 +11,7 @@ class MCAPI {
     var $apiUrl;
     
     /**
-     * Default to a
-##### v300
-second timeout on server calls
+     * Default to a 300 second timeout on server calls
      */
     var $timeout = 300; 
     
@@ -197,15 +195,9 @@ second timeout on server calls
      * @example xml-rpc_campaignSegmentTest.php
      *
      * @param string $list_id the list to test segmentation on - get lists using lists()
-     * @param array $options with
-##### v2
-keys:  
+     * @param array $options with 2 keys:  
              string "match" controls whether to use AND or OR when applying your options - expects "<strong>any</strong>" (for OR) or "<strong>all</strong>" (for AND)
-             array "conditions" - up to
-##### v10
-different criteria to apply while segmenting. Each criteria row must contain
-##### v3
-keys - "<strong>field</strong>", "<strong>op</strong>", and "<strong>value</strong>" - and possibly a fourth, "<strong>extra</strong>", based on these definitions:
+             array "conditions" - up to 10 different criteria to apply while segmenting. Each criteria row must contain 3 keys - "<strong>field</strong>", "<strong>op</strong>", and "<strong>value</strong>" - and possibly a fourth, "<strong>extra</strong>", based on these definitions:
     
             Field = "<strong>date</strong>" : Select based on various dates we track
                 Valid Op(eration): <strong>eq</strong> (is) / <strong>gt</strong> (after) / <strong>lt</strong> (before)
@@ -224,9 +216,7 @@ keys - "<strong>field</strong>", "<strong>op</strong>", and "<strong>value</stro
     
             Field = "<strong>rating</strong>" : allows matching based on list member ratings
                 Valid Op(erations):  <strong>eq</strong> (=) / <strong>ne</strong> (!=) / <strong>gt</strong> (&gt;) / <strong>lt</strong> (&lt;)
-                Valid Values: a number between
-##### v0
-and 5
+                Valid Values: a number between 0 and 5
     
             Field = "<strong>ecomm_prod</strong>" or "<strong>ecomm_prod</strong>": allows matching product and category names from purchases
                 Valid Op(erations): 
@@ -300,29 +290,15 @@ and 5
             For RSS Campaigns this, array should contain:
                 string url the URL to pull RSS content from - it will be verified and must exist
                 string schedule optional one of "daily", "weekly", "monthly" - defaults to "daily"
-                string schedule_hour optional an hour between
-##### v0
-and
-##### v24
-- default to
-##### v4
-(4am <em>local time</em>) - applies to all schedule types
-                string schedule_weekday optional for "weekly" only, a number specifying the day of the week to send:
-##### v0
-(Sunday) -
-##### v6
-(Saturday) - defaults to
-##### v1
-(Monday)
+                string schedule_hour optional an hour between 0 and 24 - default to 4 (4am <em>local time</em>) - applies to all schedule types
+                string schedule_weekday optional for "weekly" only, a number specifying the day of the week to send: 0 (Sunday) - 6 (Saturday) - defaults to 1 (Monday)
                 string schedule_monthday optional for "monthly" only, a number specifying the day of the month to send (1 - 28) or "last" for the last day of a given month. Defaults to the 1st day of the month
              
             For A/B Split campaigns, this array should contain:
                 string split_test The values to segment based on. Currently, one of: "subject", "from_name", "schedule". NOTE, for "schedule", you will need to call campaignSchedule() separately!
                 string pick_winner How the winner will be picked, one of: "opens" (by the open_rate), "clicks" (by the click rate), "manual" (you pick manually)
                 integer wait_units optional the default time unit to wait before auto-selecting a winner - use "3600" for hours, "86400" for days. Defaults to 86400.
-                integer wait_time optional the number of units to wait before auto-selecting a winner - defaults to 1, so if not set, a winner will be selected after
-##### v1
-Day.
+                integer wait_time optional the number of units to wait before auto-selecting a winner - defaults to 1, so if not set, a winner will be selected after 1 Day.
                 integer split_size optional this is a percentage of what size the Campaign's List plus any segmentation options results in. "schedule" type forces 50%, all others default to 10%
                 string from_name_a optional sort of, required when split_test is "from_name"
                 string from_name_b optional sort of, required when split_test is "from_name"
@@ -333,9 +309,7 @@ Day.
                 
             For AutoResponder campaigns, this array should contain:
                 string offset-units one of "day", "week", "month", "year" - required
-                string offset-time the number of units, must be a number greater than
-##### v0
-- required
+                string offset-time the number of units, must be a number greater than 0 - required
                 string offset-dir either "before" or "after"
                 string event optional "signup" (default) to base this on double-optin signup, "date" or "annual" to base this on merge field in the list
                 string event-datemerge optional sort of, this is required if the event is "date" or "annual"
@@ -430,9 +404,7 @@ Day.
             string  sendtime_end optional - only show campaigns that have been sent before this date/time (in GMT) - format is YYYY-MM-DD HH:mm:ss (24hr)
             boolean exact optional - flag for whether to filter on exact values when filtering, or search within content for filter values - defaults to true
      * @param integer $start optional - control paging of campaigns, start results at this campaign #, defaults to 1st page of data  (page 0)
-     * @param integer $limit optional - control paging of campaigns, number of campaigns to return with each call, defaults to
-##### v25
-(max=1000)
+     * @param integer $limit optional - control paging of campaigns, number of campaigns to return with each call, defaults to 25 (max=1000)
      * @return array list of campaigns and their associated information (see Returned Fields for description)
      * @returnf string id Campaign Id (used for all other campaign functions)
      * @returnf integer web_id The Campaign id used in our web app, allows you to create a link directly to it
@@ -532,11 +504,7 @@ Day.
     }
 
     /**
-     * Get the top
-##### v5
-performing email domains for this campaign. Users want more than
-##### v5
-should use campaign campaignEmailStatsAIM()
+     * Get the top 5 performing email domains for this campaign. Users want more than 5 should use campaign campaignEmailStatsAIM()
      * or campaignEmailStatsAIMAll() and generate any additional stats they require.
      * 
      * @section Campaign  Stats
@@ -545,9 +513,7 @@ should use campaign campaignEmailStatsAIM()
      *
      * @param string $cid the campaign id to pull email domain performance for (can be gathered using campaigns())
      * @return array domains email domains and their associated stats
-     * @returnf string domain Domain name or special "Other" to roll-up stats past
-##### v5
-domains
+     * @returnf string domain Domain name or special "Other" to roll-up stats past 5 domains
      * @returnf integer total_sent Total Email across all domains - this will be the same in every row
      * @returnf integer emails Number of emails sent to this domain
      * @returnf integer bounces Number of bounces
@@ -695,9 +661,7 @@ domains
     /**
      * Retrieve the full bounce messages for the given campaign. Note that this can return very large amounts
      * of data depending on how large the campaign was and how much cruft the bounce provider returned. Also,
-     * message over
-##### v30
-days old are subject to being removed
+     * message over 30 days old are subject to being removed
      * 
      * @section Campaign  Stats
      *
@@ -762,14 +726,8 @@ days old are subject to being removed
             bool    secure optional - whether to require a password for the shared report. defaults to "true"
             string  password optional - if secure is true and a password is not included, we will generate one. It is always returned.
             string  to_email optional - optional, email address to share the report with - no value means an email will not be sent
-            array   theme  optional - an array containing either
-##### v3
-or
-##### v6
-character color code values for: "bg_color", "header_color", "current_tab", "current_tab_text", "normal_tab", "normal_tab_text", "hover_tab", "hover_tab_text"
-            string  css_url    optional - a link to an external CSS file to be included after our default CSS (http://vip-reports.net/css/vip.css) <strong>only if</strong> loaded in an IFRAME - max
-##### v255
-characters
+            array   theme  optional - an array containing either 3 or 6 character color code values for: "bg_color", "header_color", "current_tab", "current_tab_text", "normal_tab", "normal_tab_text", "hover_tab", "hover_tab_text"
+            string  css_url    optional - a link to an external CSS file to be included after our default CSS (http://vip-reports.net/css/vip.css) <strong>only if</strong> loaded in an IFRAME - max 255 characters
      * @return struct Struct containing details for the shared report
      * @returnf string title The Title of the Campaign being shared
      * @returnf string url The URL to the shared report
@@ -1185,32 +1143,20 @@ characters
      *
      * @param string $id the list id to connect to. Get by calling lists()
      * @param string $email_address the email address to subscribe
-     * @param array $merge_vars array of merges for the email (FNAME, LNAME, etc.) (see examples below for handling "blank" arrays). Note that a merge field can only hold up to
-##### v255
-characters. Also, there are
-##### v2
-"special" keys:
+     * @param array $merge_vars array of merges for the email (FNAME, LNAME, etc.) (see examples below for handling "blank" arrays). Note that a merge field can only hold up to 255 characters. Also, there are 2 "special" keys:
                         string INTERESTS Set Interest Groups by passing a field named "INTERESTS" that contains a comma delimited list of Interest Groups to add. Commas in Interest Group names should be escaped with a backslash. ie, "," =&gt; "\,"
                         string OPTINIP Set the Opt-in IP fields. <em>Abusing this may cause your account to be suspended.</em> We do validate this and it must not be a private IP address.
                         
                         <strong>Handling Field Data Types</strong> - most fields you can just pass a string and all is well. For some, though, that is not the case...
                         Field values should be formatted as follows:
-                        string address For the string version of an Address, the fields should be delimited by <strong>2</strong> spaces. Address
-##### v2
-can be skipped. The Country should be a
-##### v2
-character ISO-3166-1 code and will default to your default country if not set
-                        array address For the array version of an Address, the requirements for Address
-##### v2
-and Country are the same as with the string version. Then simply pass us an array with the keys <strong>addr1</strong>, <strong>addr2</strong>, <strong>city</strong>, <strong>state</strong>, <strong>zip</strong>, <strong>country</strong> and appropriate values for each
+                        string address For the string version of an Address, the fields should be delimited by <strong>2</strong> spaces. Address 2 can be skipped. The Country should be a 2 character ISO-3166-1 code and will default to your default country if not set
+                        array address For the array version of an Address, the requirements for Address 2 and Country are the same as with the string version. Then simply pass us an array with the keys <strong>addr1</strong>, <strong>addr2</strong>, <strong>city</strong>, <strong>state</strong>, <strong>zip</strong>, <strong>country</strong> and appropriate values for each
     
                         string date use YYYY-MM-DD to be safe. Generally, though, anything strtotime() understands we'll understand - <a href="http://us2.php.net/strtotime" target="_blank">http://us2.php.net/strtotime</a>
                         string dropdown can be a normal string - we <em>will</em> validate that the value is a valid option
                         string image must be a valid, existing url. we <em>will</em> check its existence
                         string multi_choice can be a normal string - we <em>will</em> validate that the value is a valid option
-                        double number pass in a valid number - anything else will turn in to zero (0). Note, this will be rounded to
-##### v2
-decimal places
+                        double number pass in a valid number - anything else will turn in to zero (0). Note, this will be rounded to 2 decimal places
                         string phone If your account has the US Phone numbers option set, this <em>must</em> be in the form of NPA-NXX-LINE (404-555-1212). If not, we assume an International number and will simply set the field with what ever number is passed in.
                         string website This is a standard string, but we <em>will</em> verify that it looks like a valid URL
                         
@@ -1466,9 +1412,7 @@ decimal places
      * @return array containing the details for the account tied to this API Key
      * @returnf string username The Account username
      * @returnf string user_id The Account user unique id (for building some links)
-     * @returnf bool is_trial Whether the Account is in Trial mode (can only send campaigns to less than
-##### v100
-emails)
+     * @returnf bool is_trial Whether the Account is in Trial mode (can only send campaigns to less than 100 emails)
      * @returnf string timezone The timezone for the Account - default is "US/Eastern"
      * @returnf string plan_type Plan Type - "monthly", "payasyougo", or "free"
      * @returnf int plan_low <em>only for Monthly plans</em> - the lower tier for list size

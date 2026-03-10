@@ -6,9 +6,7 @@
 	padding:0px;
 	background:url("image/menu.png") repeat-x;
 	color:white;
-	margin:0
-##### v0
-20px;
+	margin:0 0 20px;
 }
 
 #menu a, #topMenu a:hover{
@@ -34,9 +32,7 @@
 
 #menuRighthand{
 	float:right;
-	padding:14px 15px
-##### v0
-0;
+	padding:14px 15px 0 0;
 }
 
 
@@ -48,9 +44,7 @@
 	clear:both;
 	border-bottom:1px solid #ACB7C4;
 	margin:0;
-	padding:0
-##### v0
-0 5px;
+	padding:0 0 0 5px;
 	height:26px;
 }
 #menuBar li{
@@ -116,9 +110,7 @@
 	background:#0B63A2 url(image/statusm-right.png) bottom right no-repeat;
 	margin:15px;
 	margin-top:-20px;
-	padding:0 5px
-##### v0
-0;
+	padding:0 5px 0 0;
 	display:none;
 }
 #SMLeft{background:url(image/statusm-left.png) bottom left no-repeat;padding-bottom:5px;}

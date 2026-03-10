@@ -1,15 +1,9 @@
 <?php
 /*
- $Rev:
-##### v254
-$ | $LastChangedBy: brieb $
- $LastChangedDate: 2007-08-07 18:38:38 -0600 (Tue,
-##### v07
-Aug 2007) $
+ $Rev: 254 $ | $LastChangedBy: brieb $
+ $LastChangedDate: 2007-08-07 18:38:38 -0600 (Tue, 07 Aug 2007) $
  +-------------------------------------------------------------------------+
- | Copyright (c)
-##### v2004
-- 2010, Kreotek LLC                                  |
+ | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -361,12 +355,8 @@ if(class_exists("phpbmsTable")){
 							while(date("n",$tempDate) == ($dateArray["tm_mon"]+1)){
 
 								if($therecord["repeatontheweek"] == 5){
-									//
-##### v5
-is the "last" option, so we just need to see if
-									// the date falls in the last
-##### v6
-days
+									// 5 is the "last" option, so we just need to see if
+									// the date falls in the last 6 days
 									if($daysInMonth - date("d",$tempDate) < 7)
 										$validDates[] = $tempDate;
 
@@ -406,12 +396,8 @@ days
 
 								while(date("n",$tempDate) == $monthNum){
 									if($therecord["repeatontheweek"] == 5){
-										//
-##### v5
-is the "last" option, so we just need to see if
-										// the date falls in the last
-##### v6
-days
+										// 5 is the "last" option, so we just need to see if
+										// the date falls in the last 6 days
 										if($daysInMonth - date("d",$tempDate) < 7)
 											$validDates[] = $tempDate;
 
@@ -500,9 +486,7 @@ days
                                 notes
                             WHERE
                                 parentid = '".$parentid."'
-                                AND completed =
-##### v0
-AND startdate ='".dateToString($newdate,"SQL")."'";
+                                AND completed = 0 AND startdate ='".dateToString($newdate,"SQL")."'";
 
 			$queryresult=$this->db->query($querystatement);
 
@@ -725,21 +709,15 @@ AND startdate ='".dateToString($newdate,"SQL")."'";
 			//check booleans
 			if(isset($variables["completed"]))
 				if($variables["completed"] && $variables["completed"] != 1)
-					$this->verifyErrors[] = "The `completed` field must be a boolean (equivalent to
-##### v0
-or exactly 1).";
+					$this->verifyErrors[] = "The `completed` field must be a boolean (equivalent to 0 or exactly 1).";
 
 			if(isset($variables["private"]))
 				if($variables["private"] && $variables["private"] != 1)
-					$this->verifyErrors[] = "The `private` field must be a boolean (equivalent to
-##### v0
-or exactly 1).";
+					$this->verifyErrors[] = "The `private` field must be a boolean (equivalent to 0 or exactly 1).";
 
 			if(isset($variables["repeating"]))
 				if($variables["repeating"] && $variables["repeating"] != 1)
-					$this->verifyErrors[] = "The `repeating` field must be a boolean (equivalent to
-##### v0
-or exactly 1).";
+					$this->verifyErrors[] = "The `repeating` field must be a boolean (equivalent to 0 or exactly 1).";
 
 			return parent::verifyVariables($variables);
 

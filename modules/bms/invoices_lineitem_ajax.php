@@ -3,9 +3,7 @@
  $Rev$ | $LastChangedBy$
  $LastChangedDate$
  +-------------------------------------------------------------------------+
- | Copyright (c)
-##### v2004
-- 2010, Kreotek LLC                                  |
+ | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -89,9 +87,7 @@ class productLookup{
 					AND (".$whereclause.")
 				";
 
-			if($this->db->numRows($this->db->query($checkstatement)) >
-##### v0
-|| $clientid == "");
+			if($this->db->numRows($this->db->query($checkstatement)) > 0 || $clientid == "");
 				return false;
 
 		}//endif - numRows

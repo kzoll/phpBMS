@@ -82,21 +82,15 @@ INSERT INTO `menu` (`name`, `link`, `parentid`, `displayorder`, `createdby`, `mo
 CREATE TABLE `log` (`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT, `type` VARCHAR(25), `userid` INTEGER UNSIGNED, `ip` VARCHAR(45), `value` TEXT, `stamp` TIMESTAMP, PRIMARY KEY(`id`));
 INSERT INTO `users` (`id`, `login`, `password`, `firstname`, `lastname`, `creationdate`, `revoked`, `createdby`, `modifiedby`, `lastlogin`, `modifieddate`, `email`, `phone`, `department`, `employeenumber`, `admin`, `portalaccess`) VALUES (-2,'Scheduler','�t%�B�Tv:$�Rt�`','phpBMS','Scheduler',NOW(),0,1,1,NULL,NOW(),'','','','',0,1);
 INSERT INTO `menu` (`name`, `link`, `parentid`, `displayorder`, `createdby`, `modifiedby`, `creationdate`, `modifieddate`, `roleid`) VALUES ('system log','search.php?id=202',15,11,1,1,NOW(),NOW(),-100);
-INSERT INTO `tabledefs` (`id`, `displayname`, `type`, `moduleid`, `maintable`, `querytable`, `editfile`, `editroleid`, `addfile`, `addroleid`, `searchroleid`, `advsearchroleid`, `viewsqlroleid`, `deletebutton`, `defaultwhereclause`, `defaultsortorder`, `defaultsearchtype`, `defaultcriteriafindoptions`, `defaultcriteriaselection`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES (202,'System Log','system',1,'log','log LEFT JOIN users ON log.userid=users.id','N/A',-100,'N/A',-100,-100,-100,-100,'delete','log.stamp> DATE_SUB(CURDATE(),INTERVAL
-##### v1
-DAY)','log.stamp','','','',1,NOW(),1,NOW());
+INSERT INTO `tabledefs` (`id`, `displayname`, `type`, `moduleid`, `maintable`, `querytable`, `editfile`, `editroleid`, `addfile`, `addroleid`, `searchroleid`, `advsearchroleid`, `viewsqlroleid`, `deletebutton`, `defaultwhereclause`, `defaultsortorder`, `defaultsearchtype`, `defaultcriteriafindoptions`, `defaultcriteriaselection`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES (202,'System Log','system',1,'log','log LEFT JOIN users ON log.userid=users.id','N/A',-100,'N/A',-100,-100,-100,-100,'delete','log.stamp> DATE_SUB(CURDATE(),INTERVAL 1 DAY)','log.stamp','','','',1,NOW(),1,NOW());
 INSERT INTO `tablecolumns` (`tabledefid`, `name`, `column`, `align`, `footerquery`, `displayorder`, `sortorder`, `wrap`, `size`, `format`) VALUES (202,'time','log.stamp','left','',1,'',0,'','datetime');
 INSERT INTO `tablecolumns` (`tabledefid`, `name`, `column`, `align`, `footerquery`, `displayorder`, `sortorder`, `wrap`, `size`, `format`) VALUES (202,'id','log.id','left','',0,'',0,'',NULL);
 INSERT INTO `tablecolumns` (`tabledefid`, `name`, `column`, `align`, `footerquery`, `displayorder`, `sortorder`, `wrap`, `size`, `format`) VALUES (202,'type','log.type','left','',2,'',0,'',NULL);
 INSERT INTO `tablecolumns` (`tabledefid`, `name`, `column`, `align`, `footerquery`, `displayorder`, `sortorder`, `wrap`, `size`, `format`) VALUES (202,'value','log.value','left','',3,'',1,'90%',NULL);
 INSERT INTO `tablecolumns` (`tabledefid`, `name`, `column`, `align`, `footerquery`, `displayorder`, `sortorder`, `wrap`, `size`, `format`) VALUES (202,'user','concat(users.firstname,\" \",users.lastname)','left','',4,'',0,'',NULL);
 INSERT INTO `tablecolumns` (`tabledefid`, `name`, `column`, `align`, `footerquery`, `displayorder`, `sortorder`, `wrap`, `size`, `format`) VALUES (202,'ip address','log.ip','left','',5,'',0,'',NULL);
-INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (202,'entries within last day','log.stamp> DATE_SUB(CURDATE(),INTERVAL
-##### v1
-DAY)',0,0);
-INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (202,'entries within last week','log.stamp> DATE_SUB(CURDATE(),INTERVAL
-##### v1
-WEEK)',1,0);
+INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (202,'entries within last day','log.stamp> DATE_SUB(CURDATE(),INTERVAL 1 DAY)',0,0);
+INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (202,'entries within last week','log.stamp> DATE_SUB(CURDATE(),INTERVAL 1 WEEK)',1,0);
 INSERT INTO `tablefindoptions` (`tabledefid`, `name`, `search`, `displayorder`, `roleid`) VALUES (202,'all entries','lg.id!=-1',2,0);
 INSERT INTO `tableoptions` (`tabledefid`, `name`, `option`, `othercommand`, `roleid`) VALUES (202,'new','0',0,0);
 INSERT INTO `tableoptions` (`tabledefid`, `name`, `option`, `othercommand`, `roleid`) VALUES (202,'select','1',0,0);

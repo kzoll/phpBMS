@@ -3,9 +3,7 @@
  $Rev$ | $LastChangedBy$
  $LastChangedDate$
  +-------------------------------------------------------------------------+
- | Copyright (c)
-##### v2004
-- 2010, Kreotek LLC                                  |
+ | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -20,7 +18,7 @@
  |   notice, this list of conditions and the following disclaimer in the   |
  |   documentation and/or other materials provided with the distribution.  |
  |                                                                         |
- | - Neither the name of Kreotek LLC nor the names of its contributore may |
+ | - Neither the name of Kreotek LLC nor the names of its contributors may |
  |   be used to endorse or promote products derived from this software     |
  |   without specific prior written permission.                            |
  |                                                                         |

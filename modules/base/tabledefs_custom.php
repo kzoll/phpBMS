@@ -1,15 +1,9 @@
 <?php
 /*
- $Rev:
-##### v498
-$ | $LastChangedBy: nate $
- $LastChangedDate: 2009-04-16 13:00:58 -0600 (Thu,
-##### v16
-Apr 2009) $
+ $Rev: 498 $ | $LastChangedBy: nate $
+ $LastChangedDate: 2009-04-16 13:00:58 -0600 (Thu, 16 Apr 2009) $
  +-------------------------------------------------------------------------+
- | Copyright (c)
-##### v2004
-- 2010, Kreotek LLC                                  |
+ | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |

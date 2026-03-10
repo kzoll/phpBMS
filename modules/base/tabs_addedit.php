@@ -1,15 +1,9 @@
 <?php
 /*
- $Rev:
-##### v205
-$ | $LastChangedBy: brieb $
- $LastChangedDate: 2007-03-26 15:50:25 -0700 (Mon,
-##### v26
-Mar 2007) $
+ $Rev: 205 $ | $LastChangedBy: brieb $
+ $LastChangedDate: 2007-03-26 15:50:25 -0700 (Mon, 26 Mar 2007) $
  +-------------------------------------------------------------------------+
- | Copyright (c)
-##### v2004
-- 2010, Kreotek LLC                                  |
+ | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |

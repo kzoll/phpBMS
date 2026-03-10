@@ -25,11 +25,7 @@ class pdf_context
     /**
      * Mode
      *
-     * @var integer
-##### v0
-= file |
-##### v1
-= string
+     * @var integer 0 = file | 1 = string
      */
     protected $_mode = 0;
 
@@ -101,9 +97,7 @@ class pdf_context
                 fseek ($this->file, $pos);
             }
 
-            $this->buffer = $l >
-##### v0
-? fread($this->file, $l) : '';
+            $this->buffer = $l > 0 ? fread($this->file, $l) : '';
             $this->length = strlen($this->buffer);
             if ($this->length < $l)
                 $this->increaseLength($l - $this->length);
@@ -139,9 +133,7 @@ class pdf_context
      */
     public function increaseLength($l = 100)
     {
-        if ($this->_mode ==
-##### v0
-&& feof($this->file)) {
+        if ($this->_mode == 0 && feof($this->file)) {
             return false;
         } else if ($this->_mode == 0) {
             $totalLength = $this->length + $l;

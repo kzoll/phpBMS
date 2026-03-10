@@ -1,15 +1,9 @@
 <?php
 /*
- $Rev:
-##### v145
-$ | $LastChangedBy: mipalmer $
- $LastChangedDate: 2006-10-21 18:27:44 -0600 (Sat,
-##### v21
-Oct 2006) $
+ $Rev: 145 $ | $LastChangedBy: mipalmer $
+ $LastChangedDate: 2006-10-21 18:27:44 -0600 (Sat, 21 Oct 2006) $
  +-------------------------------------------------------------------------+
- | Copyright (c)
-##### v2004
-- 2010, Kreotek LLC                                  |
+ | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -68,9 +62,7 @@ Oct 2006) $
 		case "UPS 2nd Day Air":
 			$shippingmethod="2DA";
 		break;
-		case "UPS
-##### v3
-Day Select":
+		case "UPS 3 Day Select":
 			$shippingmethod="3DS";
 		break;
 		case "UPS Next Day Air":

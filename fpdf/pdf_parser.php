@@ -360,9 +360,7 @@ class pdf_parser
         $data = ltrim(substr($data, 0, $trailerPos));
 
         // get Line-Ending
-        preg_match_all("/(\r\n|\n|\r)/", substr($data, 0, 100), $m); // check the first
-##### v100
-bytes for line breaks
+        preg_match_all("/(\r\n|\n|\r)/", substr($data, 0, 100), $m); // check the first 100 bytes for line breaks
 
         $differentLineEndings = count(array_unique($m[0]));
         if ($differentLineEndings > 1) {
@@ -525,9 +523,7 @@ bytes for line breaks
 
                 $openBrackets = 1;
                 do {
-                    for (; $openBrackets !=
-##### v0
-&& $pos < $c->length; $pos++) {
+                    for (; $openBrackets != 0 && $pos < $c->length; $pos++) {
                         switch (ord($c->buffer[$pos])) {
                             case 0x28: // '('
                                 $openBrackets++;
@@ -539,9 +535,7 @@ bytes for line breaks
                                 $pos++;
                         }
                     }
-                } while($openBrackets !=
-##### v0
-&& $c->increaseLength());
+                } while($openBrackets != 0 && $c->increaseLength());
 
                 $result = substr($c->buffer, $c->offset, $pos - $c->offset - 1);
                 $c->offset = $pos;
@@ -578,9 +572,7 @@ bytes for line breaks
                 $endstream = $this->_readToken($c);
 
                 if ($endstream != 'endstream') {
-                    $c->reset($startPos + $e + $length + 9); //
-##### v9
-= strlen("endstream")
+                    $c->reset($startPos + $e + $length + 9); // 9 = strlen("endstream")
                     // We don't throw an error here because the next
                     // round trip will start at a new offset
                 }
@@ -883,9 +875,7 @@ bytes for line breaks
 
                     if ($stream === false) {
                         $tries = 0;
-                        while ($tries <
-##### v8
-&& ($stream === false || strlen($stream) < strlen($oStream))) {
+                        while ($tries < 8 && ($stream === false || strlen($stream) < strlen($oStream))) {
                             $oStream = substr($oStream, 1);
                             $stream = @gzinflate($oStream);
                             $tries++;

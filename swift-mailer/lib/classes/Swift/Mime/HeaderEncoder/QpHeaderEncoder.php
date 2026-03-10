@@ -54,11 +54,7 @@ class Swift_Mime_HeaderEncoder_QpHeaderEncoder extends Swift_Encoder_QpEncoder
    * Takes an unencoded string and produces a Q encoded string from it.
    * @param string $string to encode
    * @param int $firstLineOffset, optional
-   * @param int $maxLineLength, optional,
-##### v0
-indicates the default of
-##### v76
-chars
+   * @param int $maxLineLength, optional, 0 indicates the default of 76 chars
    * @return string
    */
   public function encodeString($string, $firstLineOffset = 0,

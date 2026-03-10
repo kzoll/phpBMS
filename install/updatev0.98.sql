@@ -208,9 +208,7 @@ ALTER TABLE `tablegroupings`
 --tableoptions ALTER--
 ALTER TABLE `tableoptions` ENGINE=INNODB;
 ALTER TABLE `tableoptions`
-    ADD COLUMN `needselect` BOOLEAN NOT NULL DEFAULT
-##### v1
-AFTER `option`,
+    ADD COLUMN `needselect` BOOLEAN NOT NULL DEFAULT 1 AFTER `option`,
     MODIFY `tabledefid` VARCHAR(64) NOT NULL,
     MODIFY `roleid` VARCHAR(64) NOT NULL DEFAULT '';
 --tableoptions ALTER--
@@ -299,14 +297,8 @@ INSERT INTO `reports` (`uuid`, `name`, `type`, `tabledefid`, `displayorder`, `ro
 INSERT INTO `reports` (`uuid`, `name`, `type`, `tabledefid`, `displayorder`, `roleid`, `reportfile`, `description`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES ('rpt:37a299d1-d795-ad83-4b47-0778c16a381c', 'Support Tables SQL Export', 'export', 'tbld:5c9d645f-26ab-5003-b98e-89e9049f8ac3', '0', '', 'modules/base/report/tabledefs_sqlexport.php', 'Insert statements for all support table records for table definition records.', 1, NOW(), 1, NOW());
 --end reports UPDATE--
 --scheduler INSERT--
-INSERT INTO `scheduler` (`uuid`, `name`, `job`, `crontab`, `lastrun`, `startdatetime`, `enddatetime`, `description`, `inactive`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES ('schd:fb52e7fb-bb49-7f5f-89e1-002b2785f085', 'Clean Import Files', './scheduler_delete_tempimport.php', '30::*::*::*::*', '2009-05-28 12:30:02', '2009-05-07 17:27:13', NULL, 'This will delete any temporary import files that are present (for whatever reason) after
-##### v30
-minutes of their creation.', '0', 1, NOW(), 1, NOW());
-INSERT INTO `scheduler` (`uuid`, `name`, `job`, `crontab`, `lastrun`, `startdatetime`, `enddatetime`, `description`, `inactive`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES ('schd:d1c247de-9811-d37f-ad94-a8472dc1bc9c', 'Remove Excess System Log Records', './scheduler_delete_logs.php', '*::24::*::*::*', NULL, '2009-03-31 12:00:00', NULL, 'This script will trim the system log when there are more than
-##### v2000
-records present at the time of its calling (default will be every
-##### v24
-hours).', '0', 1, NOW(), 1, NOW());
+INSERT INTO `scheduler` (`uuid`, `name`, `job`, `crontab`, `lastrun`, `startdatetime`, `enddatetime`, `description`, `inactive`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES ('schd:fb52e7fb-bb49-7f5f-89e1-002b2785f085', 'Clean Import Files', './scheduler_delete_tempimport.php', '30::*::*::*::*', '2009-05-28 12:30:02', '2009-05-07 17:27:13', NULL, 'This will delete any temporary import files that are present (for whatever reason) after 30 minutes of their creation.', '0', 1, NOW(), 1, NOW());
+INSERT INTO `scheduler` (`uuid`, `name`, `job`, `crontab`, `lastrun`, `startdatetime`, `enddatetime`, `description`, `inactive`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES ('schd:d1c247de-9811-d37f-ad94-a8472dc1bc9c', 'Remove Excess System Log Records', './scheduler_delete_logs.php', '*::24::*::*::*', NULL, '2009-03-31 12:00:00', NULL, 'This script will trim the system log when there are more than 2000 records present at the time of its calling (default will be every 24 hours).', '0', 1, NOW(), 1, NOW());
 --end scheduler INSERT--
 --settings INSERT--
 INSERT INTO `settings` (`name`, `value`) VALUES ('application_uuid','');
@@ -339,9 +331,7 @@ DELETE FROM `tabledefs` WHERE `id` = '19';
 INSERT INTO `tabledefs` (`id`,`uuid`, `displayname`, `prefix`, `type`, `moduleid`, `maintable`, `querytable`, `editfile`, `editroleid`, `addfile`, `addroleid`, `importfile`, `importroleid`, `searchroleid`, `advsearchroleid`, `viewsqlroleid`, `deletebutton`, `canpost`, `hascustomfields`, `defaultwhereclause`, `defaultsortorder`, `defaultsearchtype`, `defaultcriteriafindoptions`, `defaultcriteriaselection`, `createdby`, `creationdate`, `modifiedby`, `modifieddate`) VALUES ('19','tbld:83187e3d-101e-a8a5-037f-31e9800fed2d', 'Menu', 'menu', 'system', '1', 'menu', '((menu LEFT JOIN menu as parentmenu on menu.parentid=parentmenu.uuid) LEFT JOIN roles on menu.roleid=roles.uuid)', 'modules/base/menu_addedit.php', '-100', 'modules/base/menu_addedit.php', '-100', NULL, 'Admin', '-100', '-100', '-100', 'delete', '0', '0', 'menu.id!=0', 'if(parentmenu.name is null,menu.displayorder,parentmenu.displayorder+(menu.displayorder+1)/10000)', '', '', '', 1, NOW(), 1, NOW());
 --end tabledefs INSERT--
 --tabledefs UPDATE--
-UPDATE `tabledefs` SET `hascustomfields` =
-##### v1
-WHERE `id` IN(12, 9, 26, 200);
+UPDATE `tabledefs` SET `hascustomfields` = 1 WHERE `id` IN(12, 9, 26, 200);
 
 UPDATE `tabledefs` SET
     `uuid` = 'tbld:afe6d297-b484-4f0b-57d4-1c39412e9dfb',
@@ -508,9 +498,7 @@ INSERT INTO `tableoptions` (`tabledefid`, `name`, `option`, `needselect`, `other
 INSERT INTO `tableoptions` (`tabledefid`, `name`, `option`, `needselect`, `othercommand`, `roleid`, `displayorder`) VALUES ('tbld:2ad5146c-d4c0-db8e-592a-c0cc2f3c2c21', 'import', '1', '0', '0', 'Admin', '0');
 --end tableoptions INSERT--
 --tableoptions UPDATE--
-UPDATE `tableoptions` SET `needselect` =
-##### v0
-WHERE `name` IN('massEmail','new','printex','select') AND `tabledefid` IN (9,10,11,12,16,17,19,21,23,24,26,27,200,201,202,203,204);
+UPDATE `tableoptions` SET `needselect` = 0 WHERE `name` IN('massEmail','new','printex','select') AND `tabledefid` IN (9,10,11,12,16,17,19,21,23,24,26,27,200,201,202,203,204);
 --end tableoptions UPDATE--
 --tablesearchablefields INSERT--
 INSERT INTO `tablesearchablefields` (`tabledefid`, `field`, `name`, `displayorder`, `type`) VALUES ('tbld:2ad5146c-d4c0-db8e-592a-c0cc2f3c2c21', 'widgets.id', 'id', '1', 'field');

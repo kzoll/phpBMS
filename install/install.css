@@ -40,34 +40,26 @@ p{
     color: green;
     line-height: 16px;
     background: url("../common/image/success.gif") no-repeat left;
-    padding:2px
-##### v0
-2px 20px;
+    padding:2px 0 2px 20px;
 }
 
 .fail {
     color: red;
     line-height: 16px;
     background: url("../common/image/fail.gif") no-repeat left;
-    padding:2px
-##### v0
-2px 20px;
+    padding:2px 0 2px 20px;
 }
 
 .warning {
     line-height: 16px;
     background: url("../common/image/warning.gif") no-repeat left;
-    padding:2px
-##### v0
-2px 20px;
+    padding:2px 0 2px 20px;
 }
 
 .running {
     line-height: 16px;
     background: url("../common/image/spinner.gif") no-repeat left;
-    padding:2px
-##### v0
-2px 20px;
+    padding:2px 0 2px 20px;
 }
 
 
@@ -122,9 +114,7 @@ p{
 }
 
 #registerP {
-    background:white none repeat scroll
-##### v0
-0;
+    background:white none repeat scroll 0 0;
     border:1px solid #CCCCCC;
     font-size:19px;
     padding:10px;

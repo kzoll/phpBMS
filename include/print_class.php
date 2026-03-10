@@ -3,9 +3,7 @@
  $Rev$ | $LastChangedBy$
  $LastChangedDate$
  +-------------------------------------------------------------------------+
- | Copyright (c)
-##### v2004
-- 2010, Kreotek LLC                                  |
+ | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -226,9 +224,7 @@
 					}//end if
 					$userqueryline=true;
 					while($therecord=$this->db->fetchArray($thequery)){
-						if ($therecord["userid"]>
-##### v0
-and $userqueryline) {
+						if ($therecord["userid"]> 0 and $userqueryline) {
 							$userqueryline=false;
 							?><option value="NA">----- user ------</option><?php
 						}

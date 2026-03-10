@@ -1,15 +1,9 @@
 <?php
 /*
- $Rev:
-##### v643
-$ | $LastChangedBy: nate $
- $LastChangedDate: 2009-09-02 14:00:56 -0600 (Wed,
-##### v02
-Sep 2009) $
+ $Rev: 643 $ | $LastChangedBy: nate $
+ $LastChangedDate: 2009-09-02 14:00:56 -0600 (Wed, 02 Sep 2009) $
  +-------------------------------------------------------------------------+
- | Copyright (c)
-##### v2004
-- 2010, Kreotek LLC                                  |
+ | Copyright (c) 2004 - 2010, Kreotek LLC                                  |
  | All rights reserved.                                                    |
  +-------------------------------------------------------------------------+
  |                                                                         |
@@ -158,9 +152,7 @@ Sep 2009) $
         $theinput = new inputField("destscript",$therecord["destscript"], "script path from the server", true);
 		$theform->addField($theinput);
 
-        $theinput = new inputField("port", $therecord["port"], "port (if different from
-##### v80
-or 443)", false, "integer", 12, 12);
+        $theinput = new inputField("port", $therecord["port"], "port (if different from 80 or 443)", false, "integer", 12, 12);
         $theform->addField($theinput);
 
         $theinput = new inputField("apiusername",$therecord["apiusername"], "api username", true);

@@ -10,9 +10,7 @@
 .buttonSection{border-top:0;  padding-top:0; padding-bottom:1px;}
 
 #queryTableContainer{
-	margin:0
-##### v0
-5px;
+	margin:0 0 5px;
 	padding:0;
 	clear:both;
 	overflow:auto;

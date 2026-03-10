@@ -420,32 +420,18 @@ class Swift_Mime_SimpleMessage extends Swift_Mime_MimePart
   
   /**
    * Set the priority of this message.
-   * The value is an integer where
-##### v1
-is the highest priority and
-##### v5
-is the lowest.
+   * The value is an integer where 1 is the highest priority and 5 is the lowest.
    * @param int $priority
    * @return Swift_Mime_SimpleMessage
    */
   public function setPriority($priority)
   {
     $priorityMap = array(
-     
-##### v1
-=> 'Highest',
-     
-##### v2
-=> 'High',
-     
-##### v3
-=> 'Normal',
-     
-##### v4
-=> 'Low',
-     
-##### v5
-=> 'Lowest'
+      1 => 'Highest',
+      2 => 'High',
+      3 => 'Normal',
+      4 => 'Low',
+      5 => 'Lowest'
       );
     $pMapKeys = array_keys($priorityMap);
     if ($priority > max($pMapKeys))
@@ -467,9 +453,7 @@ is the lowest.
   
   /**
    * Get the priority of this message.
-   * The returned value is an integer where
-##### v1
-is the highest priority and 5
+   * The returned value is an integer where 1 is the highest priority and 5
    * is the lowest.
    * @return int
    */
@@ -553,9 +537,7 @@ is the highest priority and 5
    */
   public function toString()
   {
-    if (count($children = $this->getChildren()) >
-##### v0
-&& $this->getBody() != '')
+    if (count($children = $this->getChildren()) > 0 && $this->getBody() != '')
     {
       $this->setChildren(array_merge(array($this->_becomeMimePart()), $children));
       $string = parent::toString();
@@ -586,9 +568,7 @@ is the highest priority and 5
    */
   public function toByteStream(Swift_InputByteStream $is)
   {
-    if (count($children = $this->getChildren()) >
-##### v0
-&& $this->getBody() != '')
+    if (count($children = $this->getChildren()) > 0 && $this->getBody() != '')
     {
       $this->setChildren(array_merge(array($this->_becomeMimePart()), $children));
       parent::toByteStream($is);

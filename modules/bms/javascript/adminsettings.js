@@ -17,9 +17,7 @@ bmsSettings ={
 
 		var encryptionStatusChanged = getObjectFromID("encryptionStatusChanged");
 
-		if(encryptionStatusChanged.value ==
-##### v0
-|| encryptionStatusChanged.value == "0"){
+		if(encryptionStatusChanged.value == 0 || encryptionStatusChanged.value == "0"){
 
 			encryptionStatusChanged.value = 1;
 
